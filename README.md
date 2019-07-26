@@ -81,59 +81,165 @@ You should see the Ubuntu desktop now and be able to interact with your mouse an
 
 You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
 
+Note: to help you with downloading required components, it is recommended that you install Firefox:
+	```
+	sudo apt-get update
+	sudo apt-get install firefox
+	```
+
 ## Natively installing TRACS
-### Linux
+### Linux and Mac OS
+#### Requirements
 You must first have the following components installed on your Linux device to run TRACS:
 	1. Python 3.6+
-	2. Tkinter, scipy, and numpy packages for Python 3
+	2. Tkinter, pandas, and numpy packages for Python 3
 	3. Cutadapt (recommended version 1.18)
 	4. Bowtie2 (recommended version 2.3.4.2)
-	5. MAGeCK (only version 0.5.5 supported)
+	5. Samtools (recommended version 1.9)
+	6. MAGeCK (only version 0.5.5 supported)
 
 If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, scipy, or numpy packages.
 If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, or MAGeCK properly installed and configured.
 
 If you are unsure if you have these components, here is an easy way to check (run these commands in a Terminal:
 
-Python 3.6+
+Note: If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
+
+Python 3.6+:
+
 	```
 	python --version
 	```
-	You should see the current version of Python installed.
+	
+	
+You should see the current version of Python installed.
 
-Cutadapt
+Cutadapt:
+
 	```
 	cutadapt --version
 	```
-	You should see the current version of Cutadapt installed.
 	
-Bowtie2
+You should see the current version of Cutadapt installed.
+	
+Bowtie2:
+
 	```
 	bowtie2 --version
 	```
-	You should see the current version of Bowtie2 installed.
+	
+You should see the current version of Bowtie2 installed.
 
-MAGeCK
+Samtools:
+
+	```
+	samtools --version
+	```
+	
+You should see the current version of Samtools installed.
+
+MAGeCK:
+
 	```
 	mageck --version
 	```
-	You should see the current version of MAGeCK installed.
+	
+You should see the current version of MAGeCK installed.
+
 
 To determine if you have the correct Python packages installed, start Python:
 	```
 	python3
 	```
-	Then import each package from the Python 3 command prompt:
-		```
-		import tkinter
-		```
-		```
-		import scipy
-		```
-		import numpy
-		```
-	If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
 	
+Then import each package from the Python 3 command prompt:
+	```
+	import tkinter
+	```
+
+	```
+	import pandas
+	```
+
+	```
+	import numpy
+	```
+		
+If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
+
+If you have each of these required components installed, you can continue with natively installing TRACS in Linux or Mac OS.
+If these required components are missing or you don't have at least the recommended versions installed, you can follow the instructions below to install them. 
+Note: For MAGeCK, we find versions after than 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
+
+#### Installing required components
+Installing Python 3:
+	```
+	sudo apt-get update
+	sudo apt-get install python3
+	```
+
+Installing tkinter for Python3:
+	```
+	sudo apt-get update
+	sudo apt-get install python3-tk
+	```
+	
+Installing pandas for Python3:
+	```
+	sudo apt-get update
+	sudo apt-get install python3-pandas
+	```
+Installing pandas usually installs numpy as well. If not, you can install it as follows:
+	```
+	sudo apt-get update
+	sudo apt-get install python3-numpy
+	```
+
+Installing Cutadapt:
+	```
+	sudo apt-get update
+	sudo apt-get install cutadapt
+	```
+
+Installing bowtie2:
+	```
+	sudo apt-get update
+	sudo apt-get install cutadapt
+	```
+
+Installing Samtools:
+	```
+	sudo apt-get update
+	sudo apt-get install samtools 
+	```
+	
+Installing MAGeCK:
+To install MAGeCK, we recommend building it from source. This requires some additional packages not required by TRACS but required to build from source:
+	```
+	sudo apt-get update
+	sudo apt-get install python3-distutils python3-dev build-essential
+	```
+
+Then download MAGeCK 0.5.5 using ```wget``` or paste the link into a browser:
+	```
+	wget http://www.dkfz.de/signaling/crispranalyzer/mageck-0.5.5.tar.gz
+	```
+	
+Then extract and run the setup script (make sure you are in the correct directory if you used a browser to download!):
+	```
+	tar xvf mageck-0.5.5.tar.gz
+	cd mageck-0.5.5
+	python setup.py install
+	```
+
+Go back to the previous steps under the Requirements section and ensure each component is installed as described above.
+
+#### Installing TRACS natively
+Once you have all of the requirement components installed, you are ready to install TRACS!
+
+1. Download the required files from our github repository:
+	
+
 ### Mac OS
 
 ## Using TRACS with Docker
