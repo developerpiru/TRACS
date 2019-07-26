@@ -237,10 +237,18 @@ Go back to the previous steps under the Requirements section and ensure each com
 #### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
-1. Download the required files from our github repository:
-	
+1. Connect with your VNC server to your Linux server (see instructions above).
 
-### Mac OS
+2. Download the TRACS zip file from our github repository (TRACSv0.9.9.2.zip).
+
+3. Extract the TRACSv0.9.9.2 folder to any location you desire.
+
+4. Open a Terminal window and nagvigate to that folder. 
+
+5. Enter this command to start TRACS:
+	```
+	python3 TRACS_v0.9.9.2.py
+	```
 
 ## Using TRACS with Docker
 ### Docker on Windows
@@ -256,7 +264,7 @@ Once you have all of the requirement components installed, you are ready to inst
 2. Download and install XMing X Server for Windows: https://sourceforge.net/projects/xming/
 	Install with the default options.
 
-3. Download the TRACS-docker-container-win.zip file from our github repository. 
+3. Download the TRACS-docker-container-win.zip file located in the TRACS-Docker-Setup folder on our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 4. Extract the TRACS-docker-container folder to ```C:\``` (note if you change this location, you will need to modify the PowerShell scripts accordingly).
@@ -285,7 +293,7 @@ TRACS will launch in a Docker container and mount your local ```C:\``` drive at 
 
 3. Start XQuartz and go to Preferences > Security and check option to allow connections from network clients. Exit XQuartz.
 
-4. Download the TRACS-docker-container-mac.zip file from our github repository. 
+4. Download the TRACS-docker-container-mac.zip file located in the TRACS-Docker-Setup folder on our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 5. Extract the TRACS-docker-container folder to anywhere you desire.
@@ -311,7 +319,7 @@ TRACS will launch in a Docker container and mount your local drives (```/Volumes
 	sudo systemctl enable docker
 	
 	```
-3. Download the TRACS-docker-container-linux.zip file from our github repository. 
+3. Download the TRACS-docker-container-linux.zip file located in the TRACS-Docker-Setup folder on our github repository. 
 
 4. Extract the TRACS-docker-container folder to anywhere you desire:
 	```
