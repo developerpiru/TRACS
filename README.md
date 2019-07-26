@@ -112,35 +112,35 @@ Python 3.6+:
 	
 	python --version
 		
-You should see the current version of Python installed.
+If installed, you should see the current version of Python.
 
 
 Cutadapt:
 
 	cutadapt --version
 	
-You should see the current version of Cutadapt installed.
+If installed, you should see the current version of Cutadapt.
 
 
 Bowtie2:
 
 	bowtie2 --version
 	
-You should see the current version of Bowtie2 installed.
+If installed, you should see the current version of Bowtie2.
 
 
 Samtools:
 
 	samtools --version
 	
-You should see the current version of Samtools installed.
+If installed, you should see the current version of Samtools.
 
 
 MAGeCK:
 
 	mageck --version
 	
-You should see the current version of MAGeCK installed.
+If installed, you should see the current version of MAGeCK.
 
 
 To determine if you have the correct Python packages installed, start Python:
@@ -164,51 +164,48 @@ If these required components are missing or you don't have at least the recommen
 Note: For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
 #### Installing required components
+Update sources before you begin:
+	
+	sudo apt-get update
+	
+	
 Installing Python 3:
 
-	sudo apt-get update
 	sudo apt-get install python3
 
 
 Installing tkinter for Python3:
 
-	sudo apt-get update
 	sudo apt-get install python3-tk
 
 	
 Installing pandas for Python3:
 
-	sudo apt-get update
 	sudo apt-get install python3-pandas
 
 Installing pandas will usually install numpy as well. In case it didn't, you can install it as follows:
 
-	sudo apt-get update
 	sudo apt-get install python3-numpy
 
 
 Installing Cutadapt:
 
-	sudo apt-get update
 	sudo apt-get install cutadapt
 
 
 Installing bowtie2:
 
-	sudo apt-get update
 	sudo apt-get install cutadapt
 
 
 Installing Samtools:
 
-	sudo apt-get update
 	sudo apt-get install samtools 
 
 	
 Installing MAGeCK:
 To install MAGeCK, we recommend building it from source. This requires some additional packages not required by TRACS but required to build from source:
 
-	sudo apt-get update
 	sudo apt-get install python3-distutils python3-dev build-essential
 
 
