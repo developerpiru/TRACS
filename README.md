@@ -107,9 +107,11 @@ If you are unsure if you have these components, here is an easy way to check (ru
 Note: If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
 
 Python 3.6+:
+	
 	python --version
 		
 You should see the current version of Python installed.
+
 
 Cutadapt:
 
@@ -121,44 +123,35 @@ You should see the current version of Cutadapt installed.
 Bowtie2:
 
 	bowtie2 --version
-	```
 	
 You should see the current version of Bowtie2 installed.
 
+
 Samtools:
 
-	```
 	samtools --version
-	```
 	
 You should see the current version of Samtools installed.
 
+
 MAGeCK:
 
-	```
 	mageck --version
-	```
 	
 You should see the current version of MAGeCK installed.
 
 
 To determine if you have the correct Python packages installed, start Python:
-	```
+	
 	python3
-	```
 	
 Then import each package from the Python 3 command prompt:
-	```
+	
 	import tkinter
-	```
 
-	```
 	import pandas
-	```
-
-	```
+	
 	import numpy
-	```
 		
 If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
 
@@ -168,64 +161,64 @@ Note: For MAGeCK, we find versions after than 0.5.5 cause errors. For the purpos
 
 #### Installing required components
 Installing Python 3:
-	```
+
 	sudo apt-get update
 	sudo apt-get install python3
-	```
+
 
 Installing tkinter for Python3:
-	```
+
 	sudo apt-get update
 	sudo apt-get install python3-tk
-	```
+
 	
 Installing pandas for Python3:
-	```
+
 	sudo apt-get update
 	sudo apt-get install python3-pandas
-	```
+
 Installing pandas usually installs numpy as well. If not, you can install it as follows:
-	```
+
 	sudo apt-get update
 	sudo apt-get install python3-numpy
-	```
+
 
 Installing Cutadapt:
-	```
+
 	sudo apt-get update
 	sudo apt-get install cutadapt
-	```
+
 
 Installing bowtie2:
-	```
+
 	sudo apt-get update
 	sudo apt-get install cutadapt
-	```
+
 
 Installing Samtools:
-	```
+
 	sudo apt-get update
 	sudo apt-get install samtools 
-	```
+
 	
 Installing MAGeCK:
 To install MAGeCK, we recommend building it from source. This requires some additional packages not required by TRACS but required to build from source:
-	```
+
 	sudo apt-get update
 	sudo apt-get install python3-distutils python3-dev build-essential
-	```
+
 
 Then download MAGeCK 0.5.5 using ```wget``` or paste the link into a browser:
-	```
+
 	wget http://www.dkfz.de/signaling/crispranalyzer/mageck-0.5.5.tar.gz
-	```
+
 	
 Then extract and run the setup script (make sure you are in the correct directory if you used a browser to download!):
-	```
+
 	tar xvf mageck-0.5.5.tar.gz
 	cd mageck-0.5.5
 	python setup.py install
-	```
+
 
 Go back to the previous steps under the Requirements section and ensure each component is installed as described above.
 
