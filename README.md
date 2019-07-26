@@ -10,27 +10,34 @@ There are several ways to install TRACS and each one is covered below. TRACS is 
 Please see the instructions below for your operating system for the best way to get started.
 
 ## Local machine or cloud\remote server (headless servers)
-First you must decide if you will run TRACS on a local machine with access to its graphical desktop, or if you will use a remote server\computer. If you already have a computer that you can access locally and get to the operating system's GUI desktop, continue below to see instructions for that respective operating system. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process.
+First you need to decide if you will run TRACS on a **local machine** with access to its GUI desktop, or if you will use a **headless\remote\cloud server**. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process. You can also use a remote Windows or Mac OS cloud server.
+
+
+As with any high-throughput sequencing analysis method, the more powerful the computer, the faster TRACS tasks will complete. We therefore recommend the use of cloud servers whenever possible, such as [Amazon AWS](https://aws.amazon.com/), [Google Cloud Platform (GCP)](https://cloud.google.com/), or [Microsoft Azure](https://azure.microsoft.com/). You may also use [Mac in Cloud](https://www.macincloud.com/), [XCloud](https://xcloud.me/), or [MacStadium](https://www.macstadium.com/) for Mac OS cloud servers.
+
+A Linux server running Ubuntu 18.04 LTS is recommended for AWS and GCP. If you are unfamiliar with Linux, you can also use a Windows 10 Pro instance on Azure and install TRACS using Docker. In Azure, select a [Dv3 or Ev3 CPU which supports Nested Virtualization](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) so that you can use Docker. At this time, AWS does not support Nested Virtualization while [GCP supports it on Linux only](https://cloud.google.com/compute/docs/instances/enable-nested-virtualization-vm-instances).
+
+
+## Using TRACS natively or in a Docker container
+Secondly, you need to decide whether you will run **TRACS natively** on your local or remote server, or if you will run it inside a **Docker container** (a VM instance). Our Docker container provides a ready-to-go virtual instance with TRACS and all of its required components installed. All you have to do is download and build the container (a one time step). Of course, you must have Docker isntalled. This will allow you to run TRACS on Windows, Linux, or Mac OS.
+
+
+You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and MAGeCK 0.5.5.
+
+---
+## Select your desired installation method
 + Install on Local computer
 	+ Install TRACS natively
 	+ Install TRACS Docker container
 + Install on headless\remote\cloud server
 	+ Install TRACS natively
 	+ Install TRACS Docker container
-		
-## Using TRACS in a Docker container
-The easiet way to install TRACS (and all of its required components) is to use our Docker container. This container image contains all of the required components to run TRACS and only requires that you have Docker installed on your operating system (Windows, Linux, or Mac OS).
+---
 
-## Using TRACS natively in host operating system
-You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and MAGeCK 0.5.5.
 
-## Using TRACS on a headless server (a VM or cloud computing device)
-As with any highthroughput sequencing analysis method, the powerful the host computer, the faster TRACS tasks will complete. We recommend the use of cloud servers whenever possible, such as Amazon AWS, Google Cloud Platform (GCP), or Microsoft Azure. 
-
-A Linux server running Ubuntu 18.04 LTS is recommended for AWS and GCP, but users unfamiliar with Linux can also use a Windows 10 Pro instance on Azure.
 
 ### Using TRACS on a remote\cloud Linux server
-Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux VM. If you already have this setup and can connect to the Ubuntu desktop using VNC, you can skip this part and go to TRACS installation. 
+Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux VM. If you already have this setup and you can connect to the Ubuntu desktop using VNC, you can skip this part and go to TRACS installation. 
 
 #### Setting up VNC on Ubuntu
 1. Install VNC server and xfce4 components:
@@ -66,6 +73,7 @@ Since TRACS is a GUI program, it is critical that you have an X window system se
 	```
 	sudo chmod +x ~/.vnc/xstartup
 	```
+	
 #### Install VNC client on your local computer
 You need a VNC client to connect to the VNC server you just setup on your remote server. 
 
@@ -252,7 +260,7 @@ Once you have all of the requirement components installed, you are ready to inst
 	```
 	python3 TRACS_v0.9.9.2.py
 	```
-
+---
 ## Using TRACS with Docker
 ### Docker on Windows
 #### Installation
@@ -281,6 +289,7 @@ Approve the Windows access control prompt if necessary and approve the sharing o
 
 TRACS will launch in a Docker container and mount your local ```C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
 
+---
 ### Docker on Mac OS
 #### Installation
 1. Download and install Docker Desktop for Mac OS here: https://www.docker.com/products/docker-desktop
@@ -308,6 +317,7 @@ Double click the "Start-TRACS" file to start the Docker container and launch TRA
 
 TRACS will launch in a Docker container and mount your local drives (```/Volumes```) at ```/app/TRACS/LocalDrives/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/LocalDrives/``` will be lost when you exit TRACS!
 
+---
 ### Docker on Linux
 #### Installation
 1. Install Docker for Linux (Ubuntu):
@@ -334,7 +344,7 @@ TRACS will launch in a Docker container and mount your local drives (```/Volumes
 	cd TRACS-docker-container
 	docker build -t tracs .
 	```
-
+	
 #### Launching TRACS Docker container on Linux
 Open a terminal window and enter this command to start the TRACS container:
 ```
