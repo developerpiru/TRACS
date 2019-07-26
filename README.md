@@ -239,7 +239,7 @@ Once you have all of the requirement components installed, you are ready to inst
 
 1. Connect with your VNC server to your Linux server (see instructions above).
 
-2. Download the TRACS zip file from our github repository (TRACSv0.9.9.2.zip).
+2. Download the TRACS zip file from our github repository ([TRACSv0.9.9.2.zip](TRACSv0.9.9.2.zip)).
 
 3. Extract the TRACSv0.9.9.2 folder to any location you desire.
 
@@ -319,7 +319,7 @@ TRACS will launch in a Docker container and mount your local drives (```/Volumes
 	sudo systemctl enable docker
 	
 	```
-3. Download the TRACS-docker-container-linux.zip file located in the TRACS-Docker-Setup folder on our github repository. 
+3. Download the [TRACS-docker-container-linux.zip](TRACS-Docker-setup/TRACS-docker-container-linux.zip) file located in the TRACS-Docker-Setup folder on our github repository. 
 
 4. Extract the TRACS-docker-container folder to anywhere you desire:
 	```
