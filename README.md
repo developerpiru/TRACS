@@ -82,8 +82,10 @@ You should see the Ubuntu desktop now and be able to interact with your mouse an
 You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
 
 Note: to help you with downloading required components, it is recommended that you install Firefox:
+
 	```
 	sudo apt-get update
+	
 	sudo apt-get install firefox
 	```
 
@@ -264,7 +266,7 @@ Once you have all of the requirement components installed, you are ready to inst
 2. Download and install XMing X Server for Windows: https://sourceforge.net/projects/xming/
 	Install with the default options.
 
-3. Download the TRACS-docker-container-win.zip file located in the TRACS-Docker-Setup folder on our github repository. 
+3. Download the [TRACS-docker-container-win.zip](TRACS-Docker-setup/TRACS-docker-container-win.zip) file located in the TRACS-Docker-Setup folder on our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 4. Extract the TRACS-docker-container folder to ```C:\``` (note if you change this location, you will need to modify the PowerShell scripts accordingly).
@@ -293,7 +295,7 @@ TRACS will launch in a Docker container and mount your local ```C:\``` drive at 
 
 3. Start XQuartz and go to Preferences > Security and check option to allow connections from network clients. Exit XQuartz.
 
-4. Download the TRACS-docker-container-mac.zip file located in the TRACS-Docker-Setup folder on our github repository. 
+4. Download the [TRACS-docker-container-mac.zip](TRACS-Docker-setup/TRACS-docker-container-mac.zip) file located in the TRACS-Docker-Setup folder on our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 5. Extract the TRACS-docker-container folder to anywhere you desire.
