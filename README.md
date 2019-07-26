@@ -78,7 +78,7 @@ You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sg
 	
 3. Enter your password when prompted.
 
-You should see the Ubuntu desktop now and be able to interact with your mouse and keyboard. 
+You should see the Ubuntu desktop now and be able to interact using your mouse and keyboard. 
 
 You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
 
