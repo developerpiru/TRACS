@@ -75,6 +75,7 @@ You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sg
 	```
 	192.0.2.0:5901
 	```
+	
 3. Enter your password when prompted.
 
 You should see the Ubuntu desktop now and be able to interact with your mouse and keyboard. 
@@ -106,25 +107,19 @@ If you are unsure if you have these components, here is an easy way to check (ru
 Note: If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
 
 Python 3.6+:
-
-	```
 	python --version
-	```
-	
-	
+		
 You should see the current version of Python installed.
 
 Cutadapt:
 
-	```
 	cutadapt --version
-	```
 	
 You should see the current version of Cutadapt installed.
-	
+
+
 Bowtie2:
 
-	```
 	bowtie2 --version
 	```
 	
