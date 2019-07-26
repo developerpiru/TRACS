@@ -99,7 +99,13 @@ Open a terminal window and enter this command to start the TRACS container:
 	```
 	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
 	```
-
+			
+Where ```/path/to/folder``` is your local drive/folder that you want to make available to the TRACS container.
+	
+For example:
+	```
+	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
+	```
 
 TRACS will launch in a Docker container and mount your local drive or folder (/path/to/folder) at /app/TRACS/sharedfolder/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/sharedfolder/ will be lost when you exit TRACS!
 
