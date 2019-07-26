@@ -70,8 +70,7 @@ You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sg
 	```
 	Note: the ```-geometry 1200x1050``` flag is optional and you can customize it to any resolution you prefer
 
-2. Open your VNC client (PuTTY or VNC Viewer) and enter the IP address of your remote computer followed by the ```:5901``` port:
-	For example: ```192.0.2.0:5901```
+2. Open your VNC client (PuTTY or VNC Viewer) and enter the IP address of your remote computer followed by the ```:5901``` port. For example: ```192.0.2.0:5901```
 	
 3. Enter your password when prompted.
 
