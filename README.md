@@ -4,17 +4,87 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 # Introduction
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
 
-# Installation
+# Installation methods
 There are several ways to install TRACS are each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. Please see the instructions below for your operating system for the best way to get started.
 
 ## Local machine or cloud\remote server (headless servers)
 First decide if you will run TRACS on a local machine with access to its graphical desktop or if you will use a remote server\computer. If you already have a computer that you can access locally and get to the operating system's GUI desktop, continue below to see instructions for that respective operating system. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process.
 
-## Using TRACS natively or running a Docker container
+## Using TRACS in a Docker container
 The easiet way to install TRACS (and all of its required components) is to use our Docker container. This container image contains all of the required components to run TRACS and only requires that you have Docker installed on your operating system (Windows, Linux, or Mac OS).
 
-## Using Docker on Windows
-### Installation
+## Using TRACS natively in host operating system
+You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and Mageck 0.5.5.
+
+## Using TRACS on a headless server (a VM or cloud computing device)
+As with any highthroughput sequencing analysis method, the powerful the host computer, the faster TRACS tasks will complete. We recommend the use of cloud servers whenever possible, such as Amazon AWS, Google Cloud Platform (GCP), or Microsoft Azure. 
+
+A Linux server running Ubuntu 18.04 LTS is recommended for AWS and GCP, but users unfamiliar with Linux can also use a Windows 10 Pro instance on Azure.
+
+### Using TRACS on a remote\cloud Linux server
+Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux VM. If you already have this setup and can connect to the Ubuntu desktop using VNC, you can skip this part and go to TRACS installation. 
+
+#### Setting up VNC on Ubuntu server
+1. Install VNC server and xfce4 components:
+	```
+	sudo apt update
+	sudo apt install xfce4 xfce4-goodies
+	```
+2. Install Tight VNC Server:
+	```
+	sudo apt install tightvncserver
+	```
+3. Run initial VNC server configuration to setup a password. You can say no to a "view only password":
+	```
+	vncserver
+	```
+4. Exit VNC server:
+	```
+	vncserver -kill :1
+	```
+5. Edit the VNC server configuration file to start xfce4 desktop on launch:
+	```
+	sudo nano ~/.vnc/xstartup
+	```
+6. Replace the contents of the file with the following:
+	```
+	#!/bin/bash
+	xrdb $HOME/.Xresources
+	startxfce4 &
+	```
+7. Save the file and exit (press Control + X and confirm to save).
+
+8. Edit the permissions of the file:
+	```
+	sudo chmod +x ~/.vnc/xstartup
+	```
+#### Install VNC client on your host computer
+You need a VNC client to connect to the VNC server on your remote server. 
+
+You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or RealVNC's VNC Viewer for Windows, Mac OS, or Linux (https://www.realvnc.com/en/connect/download/viewer/)
+
+#### Connecting to VNC server on remote server
+1. Start the VNC server with this command on your remote server:
+	```
+	vncserver -geometry 1200x1050
+	```
+	Note: the ```-geometry 1200x1050``` flag is optional and you can customize it to any resolution you prefer
+
+2. Open your VNC client (PuTTY or VNC Viewer) and enter the IP address of your remote computer followed by the ```:5901``` port:
+	For example:
+	```
+	192.0.2.0:5901
+	```
+3. Enter your password when prompted.
+
+You should see the Ubuntu desktop now and be able to interact with your mouse and keyboard. 
+
+You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
+
+
+## Using TRACS with Docker
+### Docker on Windows
+#### Installation
 1. Download and install Docker Desktop for Windows 10 Pro\Enterprise here: https://www.docker.com/products/docker-desktop
 
 	If you have an older version of Windows (or Windows 10 Home) you will need to install Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
@@ -34,14 +104,14 @@ The easiet way to install TRACS (and all of its required components) is to use o
 5. Right click the "Build TRACS Container.ps1" file and click "Run with PowerShell". 
 	Wait for the process to complete; it may take several minutes. 
 	
-### Launching TRACS Docker container on Windows
+#### Launching TRACS Docker container on Windows
 Right click the "Run TRACS Container - with XLaunch.ps1" file and click "Run with PowerShell". 
 Approve the Windows access control prompt if necessary and approve the sharing of your local ```C:\``` if prompted by Docker.
 
 TRACS will launch in a Docker container and mount your local ```C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
 
-## Using Docker on Mac OS
-### Installation
+### Docker on Mac OS
+#### Installation
 1. Download and install Docker Desktop for Mac OS here: https://www.docker.com/products/docker-desktop
 
 	If you have an older version of Mac OS  you will need to install Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_mac/
@@ -62,13 +132,13 @@ TRACS will launch in a Docker container and mount your local ```C:\``` drive at 
 
 6. Double click the "Build-TRACS" file to start building the TRACS Docker container.
 
-### Launching TRACS Docker container on Mac OS
+#### Launching TRACS Docker container on Mac OS
 Double click the "Start-TRACS" file to start the Docker container and launch TRACS. 
 
 TRACS will launch in a Docker container and mount your local drives (```/Volumes```) at ```/app/TRACS/LocalDrives/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/LocalDrives/``` will be lost when you exit TRACS!
 
-## Using Docker on Linux
-### Installation
+### Docker on Linux
+#### Installation
 1. Install Docker for Linux (Ubuntu):
 	```
 	sudo apt-get update
@@ -94,7 +164,7 @@ TRACS will launch in a Docker container and mount your local drives (```/Volumes
 	docker build -t tracs .
 	```
 
-### Launching TRACS Docker container on Linux
+#### Launching TRACS Docker container on Linux
 Open a terminal window and enter this command to start the TRACS container:
 ```
 docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
