@@ -27,11 +27,10 @@ You can also install TRACS natively without the need for Docker in Linux and Mac
 ---
 ## Select your desired installation method
 + Install on headless\remote\cloud server
-	+ Install TRACS natively
-	+ Install TRACS Docker container
+	+ [Install Remote Desktop or VNC server & client](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
+	+ [Install TRACS natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [install TRACS Docker container](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 + Install on Local computer
-	+ Install TRACS natively
-	+ Install TRACS Docker container
+	+ Install TRACS natively(https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or Install TRACS Docker container(https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 ---
 
 # Install on headless\remote\cloud server
@@ -272,6 +271,9 @@ Once you have all of the requirement components installed, you are ready to inst
 	```
 ---
 ## Using TRACS with Docker
+
+Access the desktop of your Windows, Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)).
+
 ### Docker on Windows
 #### Installation
 1. Download and install Docker Desktop for Windows 10 Pro\Enterprise here: https://www.docker.com/products/docker-desktop
