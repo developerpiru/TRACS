@@ -14,7 +14,7 @@ First decide if you will run TRACS on a local machine with access to its graphic
 The easiet way to install TRACS (and all of its required components) is to use our Docker container. This container image contains all of the required components to run TRACS and only requires that you have Docker installed on your operating system (Windows, Linux, or Mac OS).
 
 ## Using TRACS natively in host operating system
-You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and Mageck 0.5.5.
+You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and MAGeCK 0.5.5.
 
 ## Using TRACS on a headless server (a VM or cloud computing device)
 As with any highthroughput sequencing analysis method, the powerful the host computer, the faster TRACS tasks will complete. We recommend the use of cloud servers whenever possible, such as Amazon AWS, Google Cloud Platform (GCP), or Microsoft Azure. 
@@ -81,6 +81,60 @@ You should see the Ubuntu desktop now and be able to interact with your mouse an
 
 You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
 
+## Natively installing TRACS
+### Linux
+You must first have the following components installed on your Linux device to run TRACS:
+	1. Python 3.6+
+	2. Tkinter, scipy, and numpy packages for Python 3
+	3. Cutadapt (recommended version 1.18)
+	4. Bowtie2 (recommended version 2.3.4.2)
+	5. MAGeCK (only version 0.5.5 supported)
+
+If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, scipy, or numpy packages.
+If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, or MAGeCK properly installed and configured.
+
+If you are unsure if you have these components, here is an easy way to check (run these commands in a Terminal:
+
+Python 3.6+
+	```
+	python --version
+	```
+	You should see the current version of Python installed.
+
+Cutadapt
+	```
+	cutadapt --version
+	```
+	You should see the current version of Cutadapt installed.
+	
+Bowtie2
+	```
+	bowtie2 --version
+	```
+	You should see the current version of Bowtie2 installed.
+
+MAGeCK
+	```
+	mageck --version
+	```
+	You should see the current version of MAGeCK installed.
+
+To determine if you have the correct Python packages installed, start Python:
+	```
+	python3
+	```
+	Then import each package from the Python 3 command prompt:
+		```
+		import tkinter
+		```
+		```
+		import scipy
+		```
+		import numpy
+		```
+	If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
+	
+### Mac OS
 
 ## Using TRACS with Docker
 ### Docker on Windows
