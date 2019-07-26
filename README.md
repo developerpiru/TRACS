@@ -112,13 +112,13 @@ You can stop the VNC server using this command:
 	
 	vncserver -kill :1
 	
-
+---
 ## Natively installing TRACS (currently only Linux and Mac OS are supported natively)
 
-If you are performing this installation 
+Once you can connect to your remote server's GUI desktop, or if you are installing TRACS on a local machine, you can proceed with the following instructions to install TRACS natively. If you'd like to install TRACS in a Docker container instead, [please see these instructions](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
 
 ### Requirements
-You must first have the following components installed on your Linux device to run TRACS:
+You must have the following components installed on your Linux or Mac OS device to run TRACS:
 	1. Python 3.6+
 	2. Tkinter, pandas, and numpy packages for Python 3
 	3. Cutadapt (recommended version 1.18)
@@ -126,15 +126,15 @@ You must first have the following components installed on your Linux device to r
 	5. Samtools (recommended version 1.9)
 	6. MAGeCK (only version 0.5.5 supported)
 
-If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, scipy, or numpy packages.
+If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, Pandas, or Numpy packages.
 
-If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, or MAGeCK properly installed and configured.
+If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, Samtools, or MAGeCK properly installed or configured.
 
 
 If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
 
 
-**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
+**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6+ installed.
 
 
 Python 3.6+:
@@ -185,12 +185,13 @@ Then import each package from the Python 3 command prompt:
 	>>>  import numpy
 	
 	>>>  exit()
-		
-If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
 
-If you have each of these required components installed, you can continue with natively installing TRACS in Linux or Mac OS.
 
-If these required components are missing or you don't have at least the recommended versions installed, you can follow the instructions below to install them. 
+If you are able to import each without errors, you have them installed. If you receive a `ModuleNotFoundError` error, you need to install that package.
+
+If you have each of these required components installed, you can continue with the instructions to [natively installing TRACS in Linux or Mac OS](https://github.com/developerpiru/TRACS#installing-tracs-natively).
+
+If these required components are missing or you don't have at least the recommended versions installed, you can follow the [instructions below to install them](https://github.com/developerpiru/TRACS#installing-required-components). 
 
 **Note:** For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
@@ -252,12 +253,12 @@ Then extract and run the setup script (make sure you are in the correct director
 	python setup.py install
 
 
-Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above.
+Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above. Otherwsie, you can now [install TRACS natively](https://github.com/developerpiru/TRACS#installing-tracs-natively).
 
 ### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
-1. Connect to your remote Linux server using your VNC client (see instructions above).
+1. Access the desktop of your Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)).
 
 2. Download the TRACS zip file from our github repository ([TRACSv0.9.9.2.zip](TRACSv0.9.9.2.zip)).
 
