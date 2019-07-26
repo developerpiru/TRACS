@@ -102,11 +102,15 @@ You must first have the following components installed on your Linux device to r
 	6. MAGeCK (only version 0.5.5 supported)
 
 If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, scipy, or numpy packages.
+
 If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, or MAGeCK properly installed and configured.
 
-If you are unsure if you have these components, here is an easy way to check (run these commands in a Terminal:
+
+If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
+
 
 Note: If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
+
 
 Python 3.6+:
 	
@@ -193,7 +197,7 @@ Installing Cutadapt:
 	sudo apt-get install cutadapt
 
 
-Installing bowtie2:
+Installing Bowtie2:
 
 	sudo apt-get install cutadapt
 
