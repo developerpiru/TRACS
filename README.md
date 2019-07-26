@@ -26,20 +26,21 @@ You can also install TRACS natively without the need for Docker in Linux and Mac
 
 ---
 ## Select your desired installation method
-+ Install on Local computer
++ Install on headless\remote\cloud server
 	+ Install TRACS natively
 	+ Install TRACS Docker container
-+ Install on headless\remote\cloud server
++ Install on Local computer
 	+ Install TRACS natively
 	+ Install TRACS Docker container
 ---
 
+# Install on headless\remote\cloud server
 
+You must first connect to your server's GUI desktop. If you are using a Windows server (Windows 10 or any Windows Server OS), you can connect to it using Remote Desktop Connection from any host Windows OS and you will see the desktop automatically. If you are using a Mac OS server, you can you can install the Microsoft Remote Desktop App through the App Store to connect to a remote Mac OS or Windows server. Alternatively, you may follow the instructions below to setup VNC on your Mac OS server. If you are connecting to a Linux server, you must first ssh into your server and setup a VNC server as described below.
 
-### Using TRACS on a remote\cloud Linux server
-Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux VM. If you already have this setup and you can connect to the Ubuntu desktop using VNC, you can skip this part and go to TRACS installation. 
+If you are using a Linux server, chances are it is currently only configured for ssh\terminal access. Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux server. **If you already have this setup and you can connect to the Ubuntu desktop using VNC, you can skip this part and proceed to the instructions for installing TRACS natively.**
 
-#### Setting up VNC on Ubuntu
+## Setting up VNC on Ubuntu (may also work for Mac OS but untested)
 1. Install VNC server and xfce4 components:
 	```
 	sudo apt update
@@ -74,41 +75,51 @@ Since TRACS is a GUI program, it is critical that you have an X window system se
 	sudo chmod +x ~/.vnc/xstartup
 	```
 	
-#### Install VNC client on your local computer
+## Install VNC client on your local computer
 You need a VNC client to connect to the VNC server you just setup on your remote server. 
 
 You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or RealVNC's VNC Viewer for Windows, Mac OS, or Linux (https://www.realvnc.com/en/connect/download/viewer/)
 
-#### Connecting to VNC server on remote server
+## Connecting to VNC server on remote server
 1. Start the VNC server with this command on your remote server:
 	```
 	vncserver -geometry 1200x1050
 	```
-	Note: the ```-geometry 1200x1050``` flag is optional and you can customize it to any resolution you prefer
+	Note: the `-geometry 1200x1050` flag is optional and you can customize it to any resolution you prefer
 
-2. Open your VNC client (PuTTY or VNC Viewer) and enter the IP address of your remote computer followed by the ```:5901``` port. For example: ```192.0.2.0:5901```
+2. Open your VNC client (PuTTY or VNC Viewer) and enter the **external IP address** (not its local IP!) of your remote computer followed by the `:5901` port. For example: `192.0.2.0:5901`
 	
-3. Enter your password when prompted.
+3. Enter the password you created earlier when prompted.
 
-You should see the Ubuntu desktop now and be able to interact using your mouse and keyboard. 
+You should now see the Ubuntu desktop now and be able to interact with the GUI using your mouse and keyboard. 
 
-You are now connected to your remote server's desktop interface and can continue with the installation for TRACS either natively or using Docker.
+You are now connected to your remote server's desktop interface and can continue with the installation for [TRACS either natively](https://github.com/developerpiru/TRACS#natively-installing-tracs) or [using Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
 
-Note: to help you with downloading required components, it is recommended that you install Firefox:
+Note: to help you with downloading required components, it is recommended that you install Firefox or Chrome on your Linux server:
 
+Firefox:
+	```
 	sudo apt-get update
 	sudo apt-get install firefox
+	```
+	
+Chrome:
+	```
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	```
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
 	
-	
 	vncserver -kill :1
 	
 
-## Natively installing TRACS
-### Linux and Mac OS
-#### Requirements
+## Natively installing TRACS (currently only Linux and Mac OS are supported natively)
+
+If you are performing this installation 
+
+### Requirements
 You must first have the following components installed on your Linux device to run TRACS:
 	1. Python 3.6+
 	2. Tkinter, pandas, and numpy packages for Python 3
@@ -185,7 +196,7 @@ If these required components are missing or you don't have at least the recommen
 
 Note: For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
-#### Installing required components
+### Installing required components
 Update sources before you begin:
 	
 	sudo apt-get update
@@ -245,7 +256,7 @@ Then extract and run the setup script (make sure you are in the correct director
 
 Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above.
 
-#### Installing TRACS natively
+### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
 1. Connect to your remote Linux server using your VNC client (see instructions above).
