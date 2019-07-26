@@ -26,7 +26,7 @@ The easiet way to install TRACS (and all of its required components) is to use o
 2. Download and install XMing X Server for Windows: https://sourceforge.net/projects/xming/
 	Install with the default options.
 
-3. Download our TRACS-docker-container-win.zip from our github repository. 
+3. Download the TRACS-docker-container-win.zip file from our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 4. Extract the TRACS-docker-container folder to C:\ (note if you change this location, you will need to modify the PowerShell scripts accordingly).
@@ -55,7 +55,7 @@ TRACS will launch in a Docker container and mount your local C:\ drive at /app/T
 
 3. Start XQuartz and go to Preferences > Security and check option to allow connections from network clients. Exit XQuartz.
 
-4. Download our TRACS-docker-container-mac.zip from our github repository. 
+4. Download the TRACS-docker-container-mac.zip file from our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
 5. Extract the TRACS-docker-container folder to anywhere you desire.
@@ -68,4 +68,38 @@ Double click the "Start-TRACS" file to start the Docker container and launch TRA
 TRACS will launch in a Docker container and mount your local drives (/Volumes) at /app/TRACS/LocalDrives/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/LocalDrives/ will be lost when you exit TRACS!
 
 ## Using Docker on Linux
-To be done...
+### Installation
+1. Install Docker for Linux (Ubuntu):
+	```
+	sudo apt-get update
+	sudo apt-get install docker.io
+	```
+	
+2. Start Docker:
+	```
+	sudo systemctl start docker
+	sudo systemctl enable docker
+	
+	```
+3. Download the TRACS-docker-container-linux.zip file from our github repository. 
+
+4. Extract the TRACS-docker-container folder to anywhere you desire:
+	```
+	unzip TRACS-docker-container-linux.zip
+	```
+
+5. Navigate to the folder and build the TRACS Docker container:
+	```
+	cd TRACS-docker-container
+	docker build -t tracs .
+	```
+
+### Launching TRACS Docker container on Linux
+Open a terminal window and enter this command to start the TRACS container:
+	```
+	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
+	```
+
+
+TRACS will launch in a Docker container and mount your local drive or folder (/path/to/folder) at /app/TRACS/sharedfolder/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/sharedfolder/ will be lost when you exit TRACS!
+
