@@ -89,6 +89,7 @@ Note: to help you with downloading required components, it is recommended that y
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
+	
 	```
 	vncserver -kill :1
 	```
