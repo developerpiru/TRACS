@@ -5,11 +5,19 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
 
 # Installation methods
-There are several ways to install TRACS are each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. Please see the instructions below for your operating system for the best way to get started.
+There are several ways to install TRACS and each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. While this means (for the time being) you cannnot run TRACS natively on Windows, you can still use Docker (or other VM solution).
+
+Please see the instructions below for your operating system for the best way to get started.
 
 ## Local machine or cloud\remote server (headless servers)
-First decide if you will run TRACS on a local machine with access to its graphical desktop or if you will use a remote server\computer. If you already have a computer that you can access locally and get to the operating system's GUI desktop, continue below to see instructions for that respective operating system. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process.
-
+First you must decide if you will run TRACS on a local machine with access to its graphical desktop, or if you will use a remote server\computer. If you already have a computer that you can access locally and get to the operating system's GUI desktop, continue below to see instructions for that respective operating system. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process.
+	* Install on Local computer
+		* Install TRACS natively
+		* Install TRACS Docker container
+	* Install on headless\remote\cloud server
+		* Install TRACS natively
+		* Install TRACS Docker container
+		
 ## Using TRACS in a Docker container
 The easiet way to install TRACS (and all of its required components) is to use our Docker container. This container image contains all of the required components to run TRACS and only requires that you have Docker installed on your operating system (Windows, Linux, or Mac OS).
 
@@ -164,7 +172,9 @@ Then import each package from the Python 3 command prompt:
 If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
 
 If you have each of these required components installed, you can continue with natively installing TRACS in Linux or Mac OS.
+
 If these required components are missing or you don't have at least the recommended versions installed, you can follow the instructions below to install them. 
+
 Note: For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
 #### Installing required components
@@ -225,7 +235,7 @@ Then extract and run the setup script (make sure you are in the correct director
 	python setup.py install
 
 
-Go back to the previous steps under the Requirements section and ensure each component is installed as described above.
+Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above.
 
 #### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
