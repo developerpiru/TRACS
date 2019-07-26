@@ -147,11 +147,13 @@ To determine if you have the correct Python packages installed, start Python:
 	
 Then import each package from the Python 3 command prompt:
 	
-	import tkinter
+	>>>  import tkinter
 
-	import pandas
+	>>>  import pandas
 	
-	import numpy
+	>>>  import numpy
+	
+	>>>  exit()
 		
 If you are able to import each without errors, you have them installed. If you receive a ```ModuleNotFoundError``` error, you need to install that package.
 
