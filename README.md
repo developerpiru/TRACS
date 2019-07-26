@@ -24,7 +24,7 @@ A Linux server running Ubuntu 18.04 LTS is recommended for AWS and GCP, but user
 ### Using TRACS on a remote\cloud Linux server
 Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux VM. If you already have this setup and can connect to the Ubuntu desktop using VNC, you can skip this part and go to TRACS installation. 
 
-#### Setting up VNC on Ubuntu server
+#### Setting up VNC on Ubuntu
 1. Install VNC server and xfce4 components:
 	```
 	sudo apt update
@@ -58,8 +58,8 @@ Since TRACS is a GUI program, it is critical that you have an X window system se
 	```
 	sudo chmod +x ~/.vnc/xstartup
 	```
-#### Install VNC client on your host computer
-You need a VNC client to connect to the VNC server on your remote server. 
+#### Install VNC client on your local computer
+You need a VNC client to connect to the VNC server you just setup on your remote server. 
 
 You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or RealVNC's VNC Viewer for Windows, Mac OS, or Linux (https://www.realvnc.com/en/connect/download/viewer/)
 
@@ -87,6 +87,11 @@ Note: to help you with downloading required components, it is recommended that y
 	sudo apt-get update
 	sudo apt-get install firefox
 
+#### Stopping the VNC server
+You can stop the VNC server using this command:
+	```
+	vncserver -kill :1
+	```
 
 ## Natively installing TRACS
 ### Linux and Mac OS
@@ -159,7 +164,7 @@ If you are able to import each without errors, you have them installed. If you r
 
 If you have each of these required components installed, you can continue with natively installing TRACS in Linux or Mac OS.
 If these required components are missing or you don't have at least the recommended versions installed, you can follow the instructions below to install them. 
-Note: For MAGeCK, we find versions after than 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
+Note: For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
 #### Installing required components
 Installing Python 3:
@@ -179,7 +184,7 @@ Installing pandas for Python3:
 	sudo apt-get update
 	sudo apt-get install python3-pandas
 
-Installing pandas usually installs numpy as well. If not, you can install it as follows:
+Installing pandas will usually install numpy as well. In case it didn't, you can install it as follows:
 
 	sudo apt-get update
 	sudo apt-get install python3-numpy
@@ -227,7 +232,7 @@ Go back to the previous steps under the Requirements section and ensure each com
 #### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
-1. Connect with your VNC server to your Linux server (see instructions above).
+1. Connect to your remote Linux server using your VNC client (see instructions above).
 
 2. Download the TRACS zip file from our github repository ([TRACSv0.9.9.2.zip](TRACSv0.9.9.2.zip)).
 
