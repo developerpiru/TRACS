@@ -29,16 +29,16 @@ The easiet way to install TRACS (and all of its required components) is to use o
 3. Download the TRACS-docker-container-win.zip file from our github repository. 
 	This contains the TRACS Dockerfile, XMing configuration, and Windows PowerShell scripts to automate setup and launching TRACS. 
 
-4. Extract the TRACS-docker-container folder to C:\ (note if you change this location, you will need to modify the PowerShell scripts accordingly).
+4. Extract the TRACS-docker-container folder to ```C:\``` (note if you change this location, you will need to modify the PowerShell scripts accordingly).
 
 5. Right click the "Build TRACS Container.ps1" file and click "Run with PowerShell". 
 	Wait for the process to complete; it may take several minutes. 
 	
 ### Launching TRACS Docker container on Windows
 Right click the "Run TRACS Container - with XLaunch.ps1" file and click "Run with PowerShell". 
-Approve the Windows access control prompt if necessary and approve the sharing of your local C:\ if prompted by Docker.
+Approve the Windows access control prompt if necessary and approve the sharing of your local ```C:\``` if prompted by Docker.
 
-TRACS will launch in a Docker container and mount your local C:\ drive at /app/TRACS/cdrive/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/cdrive/ will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local ``C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
 
 ## Using Docker on Mac OS
 ### Installation
@@ -65,7 +65,7 @@ TRACS will launch in a Docker container and mount your local C:\ drive at /app/T
 ### Launching TRACS Docker container on Mac OS
 Double click the "Start-TRACS" file to start the Docker container and launch TRACS. 
 
-TRACS will launch in a Docker container and mount your local drives (/Volumes) at /app/TRACS/LocalDrives/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/LocalDrives/ will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local drives (```/Volumes```) at ```/app/TRACS/LocalDrives/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/LocalDrives/``` will be lost when you exit TRACS!
 
 ## Using Docker on Linux
 ### Installation
@@ -96,16 +96,16 @@ TRACS will launch in a Docker container and mount your local drives (/Volumes) a
 
 ### Launching TRACS Docker container on Linux
 Open a terminal window and enter this command to start the TRACS container:
-	```
-	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
-	```
+```
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
+```
 			
 Where ```/path/to/folder``` is your local drive/folder that you want to make available to the TRACS container.
 	
 For example:
-	```
-	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
-	```
+```
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
+```
 
-TRACS will launch in a Docker container and mount your local drive or folder (/path/to/folder) at /app/TRACS/sharedfolder/ in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in /app/TRACS/sharedfolder/ will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local drive or folder (```/path/to/folder```) at ```/app/TRACS/sharedfolder/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/sharedfolder/``` will be lost when you exit TRACS!
 
