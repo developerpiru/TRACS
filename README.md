@@ -30,7 +30,7 @@ You can also install TRACS natively without the need for Docker in Linux and Mac
 	+ [Install Remote Desktop or VNC server & client](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
 	+ [Install TRACS natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [install TRACS Docker container](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 + Install on Local computer
-	+ Install TRACS natively(https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or Install TRACS Docker container(https://github.com/developerpiru/TRACS#using-tracs-with-docker)
+	+ [Install TRACS natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [Install TRACS Docker container](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 ---
 
 # Install on headless\remote\cloud server
