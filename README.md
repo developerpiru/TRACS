@@ -38,7 +38,7 @@ The easiet way to install TRACS (and all of its required components) is to use o
 Right click the "Run TRACS Container - with XLaunch.ps1" file and click "Run with PowerShell". 
 Approve the Windows access control prompt if necessary and approve the sharing of your local ```C:\``` if prompted by Docker.
 
-TRACS will launch in a Docker container and mount your local ``C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local ```C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
 
 ## Using Docker on Mac OS
 ### Installation
