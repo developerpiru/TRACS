@@ -85,7 +85,6 @@ Note: to help you with downloading required components, it is recommended that y
 
 	```
 	sudo apt-get update
-	
 	sudo apt-get install firefox
 	```
 
