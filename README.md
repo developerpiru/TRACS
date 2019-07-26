@@ -11,12 +11,12 @@ Please see the instructions below for your operating system for the best way to 
 
 ## Local machine or cloud\remote server (headless servers)
 First you must decide if you will run TRACS on a local machine with access to its graphical desktop, or if you will use a remote server\computer. If you already have a computer that you can access locally and get to the operating system's GUI desktop, continue below to see instructions for that respective operating system. If you plan on running TRACS on a remote\cloud server running Linux, you will first need to setup its GUI desktop in order to use TRACS. This is a one time setup process.
-	* Install on Local computer
-		* Install TRACS natively
-		* Install TRACS Docker container
-	* Install on headless\remote\cloud server
-		* Install TRACS natively
-		* Install TRACS Docker container
+	+ Install on Local computer
+		+ Install TRACS natively
+		+ Install TRACS Docker container
+	+ Install on headless\remote\cloud server
+		+ Install TRACS natively
+		+ Install TRACS Docker container
 		
 ## Using TRACS in a Docker container
 The easiet way to install TRACS (and all of its required components) is to use our Docker container. This container image contains all of the required components to run TRACS and only requires that you have Docker installed on your operating system (Windows, Linux, or Mac OS).
