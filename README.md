@@ -85,7 +85,7 @@ You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sg
 	```
 	vncserver -geometry 1200x1050
 	```
-	Note: the `-geometry 1200x1050` flag is optional and you can customize it to any resolution you prefer
+	**Note:** the `-geometry 1200x1050` flag is optional and you can customize it to any resolution you prefer
 
 2. Open your VNC client (PuTTY or VNC Viewer) and enter the **external IP address** (not its local IP!) of your remote computer followed by the `:5901` port. For example: `192.0.2.0:5901`
 	
@@ -95,7 +95,7 @@ You should now see the Ubuntu desktop now and be able to interact with the GUI u
 
 You are now connected to your remote server's desktop interface and can continue with the installation for [TRACS either natively](https://github.com/developerpiru/TRACS#natively-installing-tracs) or [using Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
 
-Note: to help you with downloading required components, it is recommended that you install Firefox or Chrome on your Linux server:
+**Note:** to help you with downloading required components, it is recommended that you install Firefox or Chrome on your Linux server:
 
 Firefox:
 	
@@ -134,7 +134,7 @@ If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, or M
 If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
 
 
-Note: If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
+**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6 installed.
 
 
 Python 3.6+:
@@ -192,7 +192,7 @@ If you have each of these required components installed, you can continue with n
 
 If these required components are missing or you don't have at least the recommended versions installed, you can follow the instructions below to install them. 
 
-Note: For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
+**Note:** For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
 
 ### Installing required components
 Update sources before you begin:
@@ -277,7 +277,7 @@ Once you have all of the requirement components installed, you are ready to inst
 
 	If you have an older version of Windows (or Windows 10 Home) you will need to install Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 
-	Note: you may have to sign up for free with Docker before you can download.
+	**Note:** you may have to sign up for free with Docker before you can download.
 
 	Follow the instructions on the respective Docker pages for installing Docker and getting it running.
 
@@ -296,7 +296,9 @@ Once you have all of the requirement components installed, you are ready to inst
 Right click the "Run TRACS Container - with XLaunch.ps1" file and click "Run with PowerShell". 
 Approve the Windows access control prompt if necessary and approve the sharing of your local ```C:\``` if prompted by Docker.
 
-TRACS will launch in a Docker container and mount your local ```C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local ```C:\``` drive at ```/app/TRACS/cdrive/``` in the Docker container so you can transport files from the container to your local drive. 
+
+**IMPORTANT!:** As with any Docker container, anything you DO NOT save in ```/app/TRACS/cdrive/``` will be lost when you exit TRACS!
 
 ---
 ### Docker on Mac OS
@@ -305,7 +307,7 @@ TRACS will launch in a Docker container and mount your local ```C:\``` drive at 
 
 	If you have an older version of Mac OS  you will need to install Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_mac/
 
-	Note: you may have to sign up for free with Docker before you can download.
+	**Note:** you may have to sign up for free with Docker before you can download.
 
 	Follow the instructions on the respective Docker pages for installing Docker and getting it running.
 
@@ -324,7 +326,9 @@ TRACS will launch in a Docker container and mount your local ```C:\``` drive at 
 #### Launching TRACS Docker container on Mac OS
 Double click the "Start-TRACS" file to start the Docker container and launch TRACS. 
 
-TRACS will launch in a Docker container and mount your local drives (```/Volumes```) at ```/app/TRACS/LocalDrives/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/LocalDrives/``` will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local drives (```/Volumes```) at ```/app/TRACS/LocalDrives/``` in the Docker container so you can transport files from the container to your local drive. 
+
+**IMPORTANT!:** As with any Docker container, anything you DO NOT save in ```/app/TRACS/LocalDrives/``` will be lost when you exit TRACS!
 
 ---
 ### Docker on Linux
@@ -367,5 +371,7 @@ For example:
 docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
 ```
 
-TRACS will launch in a Docker container and mount your local drive or folder (```/path/to/folder```) at ```/app/TRACS/sharedfolder/``` in the Docker container so you can transport files from the container to your local drive. Note that as with any Docker container, anything you DO NOT save in ```/app/TRACS/sharedfolder/``` will be lost when you exit TRACS!
+TRACS will launch in a Docker container and mount your local drive or folder (```/path/to/folder```) at ```/app/TRACS/sharedfolder/``` in the Docker container so you can transport files from the container to your local drive.
+
+**IMPORTANT!:** As with any Docker container, anything you DO NOT save in ```/app/TRACS/sharedfolder/``` will be lost when you exit TRACS!
 
