@@ -1,0 +1,12 @@
+A set of demo files to try out TRACS are available on Google Drive here: 
+
+This zip archive contains:
+- two replicates of Cas9+ Control reads
+- two replicates of Cas9- Control reads
+- two replicates of Cas9+ Mutant reads
+- two replicates of Cas9- Mutant reads
+- one initial library read
+- the initial library CSV file (a table of all sgRNAs)
+
+The Control group is the "Initial" condition
+The Mutant group is the "Final" condition
