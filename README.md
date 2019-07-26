@@ -83,10 +83,9 @@ You are now connected to your remote server's desktop interface and can continue
 
 Note: to help you with downloading required components, it is recommended that you install Firefox:
 
-	```
 	sudo apt-get update
 	sudo apt-get install firefox
-	```
+
 
 ## Natively installing TRACS
 ### Linux and Mac OS
