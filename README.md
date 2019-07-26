@@ -99,17 +99,13 @@ Note: to help you with downloading required components, it is recommended that y
 
 Firefox:
 	
-	```
 	sudo apt-get update
 	sudo apt-get install firefox
-	```
 	
 Chrome:
 	
-	```
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	```
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
