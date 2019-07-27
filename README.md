@@ -378,3 +378,8 @@ TRACS will launch in a Docker container and mount your local drive or folder (``
 
 **IMPORTANT!:** As with any Docker container, anything you DO NOT save in ```/app/TRACS/sharedfolder/``` will be lost when you exit TRACS!
 
+---
+
+# Demo files
+
+Check the [docs/Demo-files.md](Demo-files.md) file for information on how to download some demo files for testing TRACS.
