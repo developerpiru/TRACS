@@ -31,7 +31,7 @@ You can also install TRACS natively without the need for Docker in Linux and Mac
 + Install on headless\remote\cloud server
 	+ [Install Remote Desktop or VNC server & client](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
 	+ [Install TRACS natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [install TRACS Docker container](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
-+ Install on Local computer
++ Install on local computer
 	+ [Install TRACS natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [Install TRACS Docker container](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 ---
 
@@ -137,42 +137,42 @@ If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, Samt
 
 If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
 
-Python 3.6+:
+**Python 3.6+:**
 	
 	python --version
 		
 If installed, you should see the current version of Python.
 
 
-Cutadapt:
+**Cutadapt:**
 
 	cutadapt --version
 	
 If installed, you should see the current version of Cutadapt.
 
 
-Bowtie2:
+**Bowtie2:**
 
 	bowtie2 --version
 	
 If installed, you should see the current version of Bowtie2.
 
 
-Samtools:
+**Samtools:**
 
 	samtools --version
 	
 If installed, you should see the current version of Samtools.
 
 
-MAGeCK:
+**MAGeCK:**
 
 	mageck --version
 	
 If installed, you should see the current version of MAGeCK.
   
   
-To determine if you have the correct Python packages installed, start Python:
+To determine if you have the correct **Python packages installed**, start Python:
 	
 	python3
 	
