@@ -17,7 +17,7 @@ As with any high-throughput sequencing analysis method, the more powerful the co
 
 A Linux server running Ubuntu 18.04 LTS is recommended for AWS, GCP, Azure, or other Linux VM cloud provider. If you are unfamiliar with Linux, you can also use a Windows 10 Pro instance on Azure and install TRACS using Docker. In Azure, select a [Dv3 or Ev3 based VM which support Nested Virtualization](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) so that you can use Docker. At this time, AWS does not support Nested Virtualization while [GCP supports it on Linux only](https://cloud.google.com/compute/docs/instances/enable-nested-virtualization-vm-instances).
 
-**Note:** Nested Virtualization is really only required on Azure so you can run Linux-based Docker containers in Windows.
+**Note:** Nested Virtualization is only required to run Linux-based Docker containers in a Linux VM. Hence if you want to do this, use Azure.
 
 
 ## Using TRACS natively or in a Docker container
