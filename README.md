@@ -16,6 +16,7 @@ First you need to decide if you will run TRACS on a **local machine** with acces
 As with any high-throughput sequencing analysis method, the more powerful the computer, the faster TRACS tasks will complete. We therefore recommend the use of cloud servers whenever possible, such as [Amazon AWS](https://aws.amazon.com/), [Google Cloud Platform (GCP)](https://cloud.google.com/), or [Microsoft Azure](https://azure.microsoft.com/). You may also use [Mac in Cloud](https://www.macincloud.com/), [XCloud](https://xcloud.me/), or [MacStadium](https://www.macstadium.com/) for Mac OS cloud servers.
 
 A Linux server running Ubuntu 18.04 LTS is recommended for AWS, GCP, Azure, or other Linux VM cloud provider. If you are unfamiliar with Linux, you can also use a Windows 10 Pro instance on Azure and install TRACS using Docker. In Azure, select a [Dv3 or Ev3 based VM which support Nested Virtualization](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) so that you can use Docker. At this time, AWS does not support Nested Virtualization while [GCP supports it on Linux only](https://cloud.google.com/compute/docs/instances/enable-nested-virtualization-vm-instances).
+
 **Note:** Nested Virtualization is really only required on Azure so you can run Linux-based Docker containers in Windows.
 
 
