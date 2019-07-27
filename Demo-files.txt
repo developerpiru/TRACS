@@ -1,6 +1,11 @@
 A set of demo files to try out TRACS are available on Google Drive here: 
 https://drive.google.com/open?id=1FhI5w7vMiEOKwbkBmDDFbpabxZVVrKuz
 
+File size: 2GB
+
+If using a cloud server, you should download it directly to your server using a browser.
+
+
 This zip archive contains:
 - two replicates of Cas9+ Control reads
 - two replicates of Cas9- Control reads
