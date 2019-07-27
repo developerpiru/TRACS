@@ -133,48 +133,45 @@ If you try to run TRACS and get errors during launch, it is likely you are missi
 
 If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, Samtools, or MAGeCK properly installed or configured.
 
+**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6+ installed.
 
 If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
 
-
-**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6+ installed.
-
-
-- Python 3.6+:
+Python 3.6+:
 	
 	python --version
 		
 If installed, you should see the current version of Python.
 
 
-- Cutadapt:
+Cutadapt:
 
 	cutadapt --version
 	
 If installed, you should see the current version of Cutadapt.
 
 
-- Bowtie2:
+Bowtie2:
 
 	bowtie2 --version
 	
 If installed, you should see the current version of Bowtie2.
 
 
-- Samtools:
+Samtools:
 
 	samtools --version
 	
 If installed, you should see the current version of Samtools.
 
 
-- MAGeCK:
+MAGeCK:
 
 	mageck --version
 	
 If installed, you should see the current version of MAGeCK.
-
-
+  
+  
 To determine if you have the correct Python packages installed, start Python:
 	
 	python3
