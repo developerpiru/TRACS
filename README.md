@@ -92,7 +92,7 @@ You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sg
 
 You should now see the Ubuntu desktop now and be able to interact with the GUI using your mouse and keyboard. 
 
-You are now connected to your remote server's desktop interface and can continue with the installation for [TRACS either natively](https://github.com/developerpiru/TRACS#natively-installing-tracs) or [using Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
+You are now connected to your remote server's desktop interface and can continue with the installation for [TRACS either natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [using Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
 
 **Note:** to help you with downloading required components, it is recommended that you install Firefox or Chrome on your Linux server:
 
