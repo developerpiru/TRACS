@@ -382,4 +382,4 @@ TRACS will launch in a Docker container and mount your local drive or folder (``
 
 # Demo files
 
-Check the [docs/Demo-files.md](Demo-files.md) file for information on how to download some demo files for testing TRACS.
+Check the [Demo-files.md](Demo-files.md) file for information on how to download some demo files for testing TRACS.
