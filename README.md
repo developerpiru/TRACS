@@ -96,17 +96,19 @@ You should now see the Ubuntu desktop now and be able to interact with the GUI u
 
 You are now connected to your remote server's desktop interface and can continue with the installation for [TRACS either natively](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively) or [using Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
 
-**Note:** to help you with downloading required components, it is recommended that you install Firefox or Chrome on your Linux server:
+**Note:** to help you with downloading required components, it is recommended that you install Chrome or Firefox on your Linux server:
 
+Chrome:
+	
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	
+	
 Firefox:
 	
 	sudo apt-get update
 	sudo apt-get install firefox
 	
-Chrome:
-	
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
@@ -138,35 +140,35 @@ If you are unsure whether you have these components installed, here is an easy w
 **Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6+ installed.
 
 
-Python 3.6+:
+- Python 3.6+:
 	
 	python --version
 		
 If installed, you should see the current version of Python.
 
 
-Cutadapt:
+- Cutadapt:
 
 	cutadapt --version
 	
 If installed, you should see the current version of Cutadapt.
 
 
-Bowtie2:
+- Bowtie2:
 
 	bowtie2 --version
 	
 If installed, you should see the current version of Bowtie2.
 
 
-Samtools:
+- Samtools:
 
 	samtools --version
 	
 If installed, you should see the current version of Samtools.
 
 
-MAGeCK:
+- MAGeCK:
 
 	mageck --version
 	
