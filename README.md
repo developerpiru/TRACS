@@ -275,9 +275,9 @@ Once you have all of the requirement components installed, you are ready to inst
 
 Access the desktop of your Windows, Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)).
 
-- [Docker on Windows](https://github.com/developerpiru/TRACS#Docker-on-Windows)
-- [Docker on Mac OS](https://github.com/developerpiru/TRACS#Docker-on-Mac-OS)
-- [Docker on Linux](https://github.com/developerpiru/TRACS#Docker-on-Linux)
+- [Docker on Windows](https://github.com/developerpiru/TRACS#docker-on-windows)
+- [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
+- [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
 
 ### Docker on Windows
 #### Installation
