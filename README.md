@@ -275,6 +275,10 @@ Once you have all of the requirement components installed, you are ready to inst
 
 Access the desktop of your Windows, Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)).
 
+- [Docker on Windows](https://github.com/developerpiru/TRACS/edit/master/README.md#Docker-on-Windows)
+- [Docker on Mac OS](https://github.com/developerpiru/TRACS/edit/master/README.md#Docker-on-Mac-OS)
+- [Docker on Linux](https://github.com/developerpiru/TRACS/edit/master/README.md#Docker-on-Linux)
+
 ### Docker on Windows
 #### Installation
 1. Download and install Docker Desktop for Windows 10 Pro\Enterprise here: https://www.docker.com/products/docker-desktop
