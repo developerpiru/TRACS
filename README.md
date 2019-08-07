@@ -227,7 +227,7 @@ Installing Cutadapt:
 
 Installing Bowtie2:
 
-	sudo apt-get install cutadapt
+	sudo apt-get install bowtie2
 
 
 Installing Samtools:
