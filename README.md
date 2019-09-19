@@ -250,7 +250,7 @@ Then extract and run the setup script (make sure you are in the correct director
 
 	tar xvf mageck-0.5.5.tar.gz
 	cd mageck-0.5.5
-	python setup.py install
+	sudo python setup.py install
 
 
 Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above. Otherwsie, you can now [install TRACS natively](https://github.com/developerpiru/TRACS#installing-tracs-natively).
