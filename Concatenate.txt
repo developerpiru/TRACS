@@ -1,0 +1,16 @@
+cat Cas9-AD-A*.fastq > Cas9-AD-A.fastq
+cat Cas9-AD-B*.fastq > Cas9-AD-B.fastq
+cat Cas9-AD-C*.fastq > Cas9-AD-C.fastq
+cat Cas9-R-A*.fastq > Cas9-R-A.fastq
+cat Cas9-R-B*.fastq > Cas9-R-B.fastq
+cat Cas9-R-C*.fastq > Cas9-R-C.fastq
+cat OV8-AD-A*.fastq > OV8-AD-A.fastq
+cat OV8-AD-B*.fastq > OV8-AD-B.fastq
+cat OV8-AD-C*.fastq > OV8-AD-C.fastq
+cat OV8-R-A*.fastq > OV8-R-A.fastq
+cat OV8-R-B*.fastq > OV8-R-B.fastq
+cat OV8-R-C*.fastq > OV8-R-C.fastq
+echo "done"
+
+
+
