@@ -8,8 +8,7 @@ def init_vars():
         "Initial condition name": "",                   # name of initial condition (day 0)
         "Final condition name": "",                     # name of final condition (day X)
         "Cas9 Negative Control": "",                    # Cas9- negative control used; YES/NO
-        "Library reference file": "",                   # path to library reference file
-        "Library read file": ""                         # path to library read file
+        "Library reference file": ""                    # path to library reference file
     }
 
     global LIBRARY_READ_PATH, LIST_INITIAL_PATHS, LIST_FINAL_PATHS, LIST_CAS9_NEG_I_PATHS, LIST_CAS9_NEG_F_PATHS
@@ -19,12 +18,6 @@ def init_vars():
     LIST_FINAL_PATHS = ""                               # list of final condition sample files
     LIST_CAS9_NEG_I_PATHS = ""                          # list initial Cas9  neg files
     LIST_CAS9_NEG_F_PATHS = ""                          # list final Cas9  neg files
-
-    # For testing:
-    #LIST_INITIAL_PATHS = ["1", "2", "3"]
-    #LIST_FINAL_PATHS = ["1", "2", "3"]
-    #LIST_CAS9_NEG_I_PATHS = ["1", "2", "3"]
-    #LIST_CAS9_NEG_F_PATHS = ["1", "2", "3"]
 
     global FILE_FLAGS
     FILE_FLAGS = {
@@ -40,20 +33,25 @@ def init_vars():
         "Cas9 neg tag": "-Cas9-neg"                     # tag to add to Cas9 negative files
     }
 
-    global REPLICATE_NAMING
-    REPLICATE_NAMING = [
-        "-1, -2, -3",
-        "_1, _2, _3",
-        "-A, -B, -C",
-        "_A, _B, _C"
-    ]
-
     global CAS9_TYPE_NAMING
     CAS9_TYPE_NAMING = [
         "-Cas9-pos",                                   # tag to add to Cas9 positive files
         "-Cas9-neg"                                    # tag to add to Cas9 negative files
     ]
 
-    global REPLICATE_SELECTED
-    REPLICATE_SELECTED = REPLICATE_NAMING[0]
+    global COLUMN_NAMES
+    COLUMN_NAMES = {
+        "Library": "Library",
+        "Initial": "Initial",
+        "Final": "Final",
+        "Normalized": ".norm",
+        "log2FC": ".log2FC",
+        "average": ".avg",
+        "sgw": ".sgw",
+        "rank": ".rank",
+        "ES": ".ES",
+        "ER": "EnrichmentRatio",
+        "Cas9 pos": "_Cas9-",
+        "Cas9 neg": "_Cas9neg-"
+    }
 
