@@ -285,7 +285,7 @@ Once you have all of the requirement components installed, you are ready to inst
 
 3. Extract the TRACSv1.1.1 folder to any location you desire.
 	
-	Where v1.1.1 is the version number of the release you downloaded (e.g. v1.1.1)
+	Where v1.1.1 is the version number of the release you downloaded.
 
 4. Open a Terminal window and nagvigate to that folder. 
 
@@ -293,7 +293,7 @@ Once you have all of the requirement components installed, you are ready to inst
 	```
 	python3 TRACS_v1.1.1.py
 	```
-	Where v1.1.1 is the version number of the release you downloaded (e.g. v1.1.1)
+	Where v1.1.1 is the version number of the release you downloaded.
 ---
 ## Using TRACS with Docker
 
