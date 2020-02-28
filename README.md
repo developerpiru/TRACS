@@ -510,4 +510,4 @@ Notice that each of the files are prefixed using the ```Experiment name``` enter
 
 ## Step 5: Data visualization and exploration
 
-You can visualize the data in your ```[ExperimentName].csv``` TRACS output file using the companion app called VisualizeTRACS, which is an R shiny app. Unlike TRACS, you do not need to have a powerful computer to run VisualizeTRACS - this means you can download the ```[ExperimentName].csv``` file from a cloud server (if you used one) and do the visualization steps locally. 
+You can visualize the data in your ```[ExperimentName].csv``` TRACS output file using the companion app called [VisualizeTRACS](https://github.com/developerpiru/VisualizeTRACS), which is an R shiny app. Unlike TRACS, you do not need to have a powerful computer to run VisualizeTRACS - this means you can download the ```[ExperimentName].csv``` file from a cloud server (if you used one) and do the visualization steps locally. 
