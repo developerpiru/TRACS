@@ -20,12 +20,12 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
 	+ [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
 + [Demo files](https://github.com/developerpiru/TRACS#demo-files)
-+ [Analysis tutorial]()
-	+[Step 1: Starting a new analysis]()
-	+[Step 2: Loading library files and Cas9-positive read files]()
-	+[Step 3: Loading Cas9-negative read files]()
-	+[Step 4: Run TRACS analysis]()
-	+[Step 5: Data visualization and exploration]()
++ [Analysis tutorial](https://github.com/developerpiru/TRACS#analysis-tutorial)
+	+[Step 1: Starting a new analysis](https://github.com/developerpiru/TRACS#step-1-starting-a-new-analysis)
+	+[Step 2: Loading library files and Cas9-positive read files](https://github.com/developerpiru/TRACS#step-2-loading-library-files-and-cas9-positive-read-files)
+	+[Step 3: Loading Cas9-negative read files](https://github.com/developerpiru/TRACS#step-3-loading-cas9-negative-read-files)
+	+[Step 4: Run TRACS analysis](https://github.com/developerpiru/TRACS#step-4-run-tracs-analysis)
+	+[Step 5: Data visualization and exploration](https://github.com/developerpiru/TRACS#step-5-data-visualization-and-exploration)
 ---
 
 # Introduction
@@ -427,7 +427,15 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 
 ---
 
-# Step 1: Starting a new analysis
+# Analysis tutorial
+
+Here we will walk through the steps to run a typical analysis using TRACS. This assumes you have already installed and launched TRACS using one of the methods described above in the [Installation methods](https://github.com/developerpiru/TRACS#installation-methods) section.
+
+You can download some [demo files](https://github.com/developerpiru/TRACS#demo-files) above to test out TRACS and follow along.
+
+A typical analysis can take 2-6 hours (or more) depending on how powerful your computer/server is, the number of samples you have, and the sequencing depth/number of reads. However, once you select all of your files and start the process, TRACS does everything automatically so you don't need to monitor it.
+
+## Step 1: Starting a new analysis
 
 1. Follow the instructions above to install and launch TRACS according to your desired method.
 2. In the main TRACS window, click on ```Start New Experiment```.
@@ -442,7 +450,7 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 	
 5. Cick ```Next``` to continue.
 
-# Step 2: Loading library files and Cas9-positive read files
+## Step 2: Loading library files and Cas9-positive read files
 
 6. You will then be presented with the next step of the wizard:
 	![Screenshot of step 2](Screenshots/Step2.png)
@@ -455,7 +463,7 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 
 8. Cick ```Next``` to continue.
 
-# Step 3: Loading Cas9-negative read files
+## Step 3: Loading Cas9-negative read files
 
 9. You will then be presented with step 3 of the wizard:
 	![Screenshot of step 3](Screenshots/Step3.png)
@@ -470,7 +478,7 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 
 13. Cick ```Next``` to continue or use the ```Back``` button to go to any previous steps and fix any errors.
 
-# Step 4: Run TRACS analysis
+## Step 4: Run TRACS analysis
 
 14. You will then be presented with the next step with the following prompt:
 	![Screenshot of step 4](Screenshots/Step4.png)
@@ -500,6 +508,6 @@ Notice the different folders that are created by each of the pre-processing step
 
 Notice that each of the files are prefixed using the ```Experiment name``` entered in step 1. Most of these files are created by intermediate steps by TRACS. The final data output file you want to use for further analysis, data visualization, and data exploration is the one named ```[ExperimentName].csv```. This file contains all of the Enrichment Scores (Library ES, Initial ES, Final ES), the Enrichment Ratio (ER), and the statistical values (p values and q values). 
 
-# Step 5: Data visualization and exploration
+## Step 5: Data visualization and exploration
 
 You can visualize the data in your ```[ExperimentName].csv``` TRACS output file using the companion app called VisualizeTRACS, which is an R shiny app. Unlike TRACS, you do not need to have a powerful computer to run VisualizeTRACS - this means you can download the ```[ExperimentName].csv``` file from a cloud server (if you used one) and do the visualization steps locally. 
