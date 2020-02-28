@@ -434,11 +434,11 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 3. You will be presented with Step 1 of the experiment wizard shown below:
 	![Screenshot of step 1](Screenshots/Step1.png)
 	Here you need to define the following:
-		- ```Experiment name```
-		- ```Experiment directory```
-		- ```Name of initial condition (T0)```
-		- ```Name of final condition (Tf)```
-		- ```False discovery rate (FDR)```
+		+ ```Experiment name```
+		+ ```Experiment directory```
+		+ ```Name of initial condition (T0)```
+		+ ```Name of final condition (Tf)```
+		+ ```False discovery rate (FDR)```
 
 # Step 2: Loading library files and Cas9-positive read files
 # Step 3: Loading Cas9-negative read files
