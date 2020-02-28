@@ -283,15 +283,16 @@ Once you have all of the requirement components installed, you are ready to inst
 
 2. Download the TRACS zip file from our github repository ([here](https://github.com/developerpiru/TRACS/tree/master/Releases)).
 
-3. Extract the TRACSvX.X.X folder to any location you desire.
+3. Extract the TRACSv1.1.1 folder to any location you desire.
+	Where v1.1.1 is the version number of the release you downloaded (e.g. v1.1.1)
 
 4. Open a Terminal window and nagvigate to that folder. 
 
 5. Enter this command to start TRACS:
 	```
-	python3 TRACS_vX.X.X.py
+	python3 TRACS_v1.1.1.py
 	```
-	Where vX.X.X is the version number of the release you downloaded (e.g. v1.1.1)
+	Where v1.1.1 is the version number of the release you downloaded (e.g. v1.1.1)
 ---
 ## Using TRACS with Docker
 
