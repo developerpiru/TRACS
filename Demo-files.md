@@ -20,10 +20,10 @@ Unzip the archive and make sure it is available in a shared folder if using Dock
 This zip archive contains:
 - the initial library CSV file (a table of all sgRNAs)
 - one initial library read
-- two replicates of Cas9+ Control reads (A and B)
-- two replicates of Cas9- Control reads (A and B)
-- two replicates of Cas9+ Mutant reads (A and B)
-- two replicates of Cas9- Mutant reads (A and B)
+- two replicates of Cas9-positive Control reads (A and B)
+- two replicates of Cas9-negative Control reads (A and B)
+- two replicates of Cas9-positive Mutant reads (A and B)
+- two replicates of Cas9-negative Mutant reads (A and B)
  
  
 The Control group is the **Initial** condition.
