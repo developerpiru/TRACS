@@ -434,11 +434,11 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 3. You will be presented with Step 1 of the experiment wizard shown below:
 	![Screenshot of step 1](Screenshots/Step1.png)
 	Here you need to define the following:
-	+ ```Experiment name```
-	+ ```Experiment directory```
-	+ ```Name of initial condition (T0)```
-	+ ```Name of final condition (Tf)```
-	+ ```False discovery rate (FDR)```
+	+ ```Experiment name```: Enter an identifying name for your project. All of the files created by TRACS will have this name as the prefix.
+	+ ```Experiment directory```: Entire a folder to store all of the files created by TRACS. It is recommended that you make a new folder to keep things organized. TRACS will create subdirectories and files within this main folder.
+	+ ```Name of initial condition (T0)```: Enter a name for your initial condition at time T0 (e.g. Initial, Adherent, Time_0hr, DMSO). This will be used as the column prefix for all initial condition (T0) samples. Do not use spaces!
+	+ ```Name of final condition (Tf)```: Enter a name for your final condition at time Tf (e.g. Final, Spheroids, Time_48hr, Drug_treated). This will be used as the column prefix for all final condition (Tf) samples. Do not use spaces!
+	+ ```False discovery rate (FDR)```: Enter a false discovery rate as a decimal fraction. The default is 0.05 for 5%.
 
 # Step 2: Loading library files and Cas9-positive read files
 # Step 3: Loading Cas9-negative read files
