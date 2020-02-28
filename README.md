@@ -150,13 +150,13 @@ Once you can connect to your remote server's GUI desktop, or if you are installi
 ### Requirements
 You must have the following components installed on your Linux or Mac OS device to run TRACS:
 	1. Python 3.6+
-	2. Tkinter, pandas, and numpy packages for Python 3
+	2. Tkinter, pandas, scipy, and numpy packages for Python 3
 	3. Cutadapt (recommended version 1.18)
 	4. Bowtie2 (recommended version 2.3.4.2)
 	5. Samtools (recommended version 1.9)
 	6. MAGeCK (only version 0.5.5 supported)
 
-If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, Pandas, or Numpy packages.
+If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, Pandas, Scipy, or Numpy packages.
 
 If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, Samtools, or MAGeCK properly installed or configured.
 
@@ -209,6 +209,8 @@ Then import each package from the Python 3 command prompt:
 
 	>>>  import pandas
 	
+	>>>  import scipy
+	
 	>>>  import numpy
 	
 	>>>  exit()
@@ -241,6 +243,10 @@ Installing tkinter for Python3:
 Installing pandas for Python3:
 
 	sudo apt-get install python3-pandas
+
+Installing scipy for Python3:
+
+	sudo apt-get install python3-scipy
 
 Installing pandas will usually install numpy as well. In case it didn't, you can install it as follows:
 
