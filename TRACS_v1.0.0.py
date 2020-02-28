@@ -1403,13 +1403,8 @@ class AnalyzeCounts(tk.Frame):
 
         os.chdir(reads_target_path)
 
-        #### MOD TO RUN FIXED READ COUNT FILE ####
         # get name of read counts file
         readsfile = global_vars.EXPERIMENT_SETTINGS['Experiment name'] + ".count.txt"
-
-        ### DEBUG direct read counts file for debugging ###
-        #readsfile = "Raw read counts for TRACS - iOVCA147.txt" #### MOD TO RUN FIXED READ COUNT FILE ####
-        #readsfile = "Minimal readcounts.txt"
 
         # load counts into pandas dataframe
         self.raw_counts = pd.read_csv(readsfile, delimiter='\t')
@@ -1687,9 +1682,6 @@ class AnalyzeCounts(tk.Frame):
             # copy column into temp_mean so mean can easily be calculated
             temp_mean_initial[current_initial_col_name] = self.sgw[current_initial_col_name]
             temp_mean_final[current_final_col_name] = self.sgw[current_final_col_name]
-
-        # get the gene names from the sgw dataframe
-        #self.temp_stats['Gene'] = self.sgw['Gene']
 
         # calculate the mean for initial and final conditions
         self.temp_stats['i_mean'] = temp_mean_initial.mean(axis=1)
