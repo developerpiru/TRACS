@@ -4,10 +4,8 @@ def init_vars():
     EXPERIMENT_SETTINGS = {                             # global dictionary of experiment settings
         "Experiment name": "",                          # name of experiment
         "Experiment directory": "",                     # experiment directory
-        "Library type": "",                             # type of CRISPR screen library used
         "Initial condition name": "",                   # name of initial condition (day 0)
         "Final condition name": "",                     # name of final condition (day X)
-        "Cas9 Negative Control": "",                    # Cas9- negative control used; YES/NO
         "Library reference file": "",                   # path to library reference file
         "FDR": "0.05"                                   # false discovery rate percentage as decimal
     }
