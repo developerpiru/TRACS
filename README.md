@@ -491,7 +491,7 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 
 You can monitor the progress using the command line/terminal window. You should see status updates during the pre-processing steps (trimming, alignment, read count generation). The final status output will look like this upon successful completion:
 
-![Screenshot of step 3](Screenshots/Status.png)
+	![Screenshot of step 3](Screenshots/Status.png)
 
 18. Your experiment folder will now contain the following files and folders:
 	![Screenshot of experiment folder](Screenshots/Experimentfolder.png)
