@@ -20,6 +20,12 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
 	+ [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
 + [Demo files](https://github.com/developerpiru/TRACS#demo-files)
++ [Analysis tutorial]()
+	+[Step 1: Starting a new analysis]()
+	+[Step 2: Loading library files and Cas9-positive read files]()
+	+[Step 3: Loading Cas9-negative read files]()
+	+[Step 4: Run TRACS analysis]()
+	+[Step 5: Data visualization and exploration]()
 ---
 
 # Introduction
@@ -418,3 +424,23 @@ TRACS will launch in a Docker container and mount your local drive or folder (``
 # Demo files
 
 Check the [Demo-files.md](Demo-files.md) file for information on how to download some demo files for testing TRACS.
+
+---
+
+# Step 1: Starting a new analysis
+
+1. Follow the instructions above to install and launch TRACS according to your desired method.
+2. In the main TRACS window, click on ```Start New Experiment```.
+3. You will be presented with Step 1 of the experiment wizard shown below:
+	![Screenshot of step 1](Screenshots/Step1.png)
+	Here you need to define the following:
+		- ```Experiment name```
+		- ```Experiment directory```
+		- ```Name of initial condition (T0)```
+		- ```Name of final condition (Tf)```
+		- ```False discovery rate (FDR)```
+
+# Step 2: Loading library files and Cas9-positive read files
+# Step 3: Loading Cas9-negative read files
+# Step 4: Run TRACS analysis
+# Step 5: Data visualization and exploration
