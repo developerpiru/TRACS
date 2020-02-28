@@ -1,6 +1,27 @@
 # TRACS
 Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR screens
 
+# Table of contents
++ [Introduction](https://github.com/developerpiru/TRACS#introduction)
++ [Installation methods](https://github.com/developerpiru/TRACS#installation-methods)
+	+ [Local machine or cloud\remote server (headless servers)](https://github.com/developerpiru/TRACS#local-machine-or-cloudremote-server-headless-servers)
+	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
+	+ [Select your desired installation method](https://github.com/developerpiru/TRACS#select-your-desired-installation-method)
++ [Install on headless\remote\cloud server](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
+	+ [Setting up VNC on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested)
+	+ [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)
+	+ [Connecting to VNC server on remote server](https://github.com/developerpiru/TRACS#connecting-to-vnc-server-on-remote-server)
++ [Natively installing TRACS (currently only Linux and Mac OS are supported natively)](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively)
+	+ [Requirements](https://github.com/developerpiru/TRACS#requirements)
+	+ [Installing required components](https://github.com/developerpiru/TRACS#installing-required-components)
+	+ [Installing TRACS natively](https://github.com/developerpiru/TRACS#installing-tracs-natively)
++ [Using TRACS with Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
+	+ [Docker on Windows](https://github.com/developerpiru/TRACS#docker-on-windows)
+	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
+	+ [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
++ [Demo files](https://github.com/developerpiru/TRACS#demo-files)
+---
+
 # Introduction
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
 
