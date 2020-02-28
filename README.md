@@ -281,16 +281,17 @@ Once you have all of the requirement components installed, you are ready to inst
 
 1. Access the desktop of your Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)).
 
-2. Download the TRACS zip file from our github repository ([TRACSv0.9.9.2.zip](TRACSv0.9.9.2.zip)).
+2. Download the TRACS zip file from our github repository ([here](https://github.com/developerpiru/TRACS/tree/master/Releases)).
 
-3. Extract the TRACSv0.9.9.2 folder to any location you desire.
+3. Extract the TRACSvX.X.X folder to any location you desire.
 
 4. Open a Terminal window and nagvigate to that folder. 
 
 5. Enter this command to start TRACS:
 	```
-	python3 TRACS_v0.9.9.2.py
+	python3 TRACS_vX.X.X.py
 	```
+	Where vX.X.X is the version number of the release you downloaded (e.g. v1.1.1)
 ---
 ## Using TRACS with Docker
 
