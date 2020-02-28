@@ -492,5 +492,13 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 You can monitor the progress using the command line/terminal window. You should see status updates during the pre-processing steps (trimming, alignment, read count generation). The final status output will look like this upon successful completion:
 
 ![Screenshot of step 3](Screenshots/Status.png)
-	
+
+18. Your experiment folder will now contain the following files and folders:
+	![Screenshot of experiment folder](Screenshots/Experimentfolder.png)
+
+Notice the different folders that are created by each of the pre-processing steps. **Note:** do not modify the contents of these folders in case you want to run TRACS again using option 2, as described above.
+
+Notice that each of the files are prefixed using the ```Experiment name``` entered in step 1. Most of these files are created by intermediate steps by TRACS. The final data output file you want to use for further analysis, data visualization, and data exploration is the one named ```[ExperimentName].csv```. This file contains all of the Enrichment Scores (Library ES, Initial ES, Final ES), the Enrichment Ratio (ER), and the statistical values (p values and q values). 
+
 # Step 5: Data visualization and exploration
+
