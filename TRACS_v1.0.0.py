@@ -48,10 +48,10 @@ from scipy import stats
 # - DONE - get Library, Initial, and Final ES per gene
 # - DONE - get ES ratio (ER) (log2 fold change of Initial and Final ES) per gene
 # TRACS algorithm functions work for n replicates
+# improved statistics calculations for faster speed for p value and q values calculations
 
 # # # TO DO # # #
 # output R file for web-based viewing tool
-# implement multithreading
 # move summary_box outputs to separate function call ???? --- stuck in infinite loop with bowtie2 function
 # implement error catching
 
