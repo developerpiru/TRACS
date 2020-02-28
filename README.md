@@ -433,14 +433,63 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 2. In the main TRACS window, click on ```Start New Experiment```.
 3. You will be presented with Step 1 of the experiment wizard shown below:
 	![Screenshot of step 1](Screenshots/Step1.png)
-	Here you need to define the following:
+4. Here you need to define the following:
 	+ ```Experiment name```: Enter an identifying name for your project. All of the files created by TRACS will have this name as the prefix.
 	+ ```Experiment directory```: Entire a folder to store all of the files created by TRACS. It is recommended that you make a new folder to keep things organized. TRACS will create subdirectories and files within this main folder.
 	+ ```Name of initial condition (T0)```: Enter a name for your initial condition at time T0 (e.g. Initial, Adherent, Time_0hr, DMSO). This will be used as the column prefix for all initial condition (T0) samples. Do not use spaces!
 	+ ```Name of final condition (Tf)```: Enter a name for your final condition at time Tf (e.g. Final, Spheroids, Time_48hr, Drug_treated). This will be used as the column prefix for all final condition (Tf) samples. Do not use spaces!
 	+ ```False discovery rate (FDR)```: Enter a false discovery rate as a decimal fraction. The default is 0.05 for 5%.
+	
+5. Cick ```Next``` to continue.
 
 # Step 2: Loading library files and Cas9-positive read files
+
+6. You will then be presented with the next step of the wizard:
+	![Screenshot of step 2](Screenshots/Step2.png)
+7. Here you must provide the following:
+	+ ```Library reference file (CSV)```: This is the reference file in csv (comma-delimited) format containing all of the sgRNA IDs and sequences for your pooled sgRNA library. For the GeCKO v2 library, you can download this from our GitHub repository in the [```Resources```](Resources/) folder.
+	+ ```Initial library (L0) read file (FASTQ)```: This is the sequencing read file of your initial pooled sgRNA library (L0). 
+	+ ```Initial condition (T0) Cas9-positive read files```: Here you select load all of the read files for your Cas9-positive initial condition samples. Use the ```Add``` button to open the file selection dialog. You can select multiple files at once. Use the ```Remove``` or ```Clear``` buttons to remove files.
+	![Screenshot of step 2 selecting files](Screenshots/Step2-selectfiles.png)
+	+ ```Final condition (Tf) Cas9-positive read files```: Here you select load all of the read files for your Cas9-positive final condition samples.
+
+8. Cick ```Next``` to continue.
+
 # Step 3: Loading Cas9-negative read files
+
+9. You will then be presented with step 3 of the wizard:
+	![Screenshot of step 3](Screenshots/Step3.png)
+10. Here you must load the sequencing read files (FASTQ) for your Cas9-negative samples:
+	+ ```Initial condition (T0) Cas9-negative read files```: Select all of the read files for your Cas9-negative guide-only initial condition samples.
+	+ ```Final condition (T0) Cas9-negative read files```: Select all of the read files for your Cas9-negative guide-only final condition samples.
+
+11. Cick ```Next``` to continue.
+
+12. You will then be shown a Summary page where you can confirm all of the details and files you entered:
+	![Screenshot of Summary](Screenshots/Summary.png)
+
+13. Cick ```Next``` to continue or use the ```Back``` button to go to any previous steps and fix any errors.
+
 # Step 4: Run TRACS analysis
+
+14. You will then be presented with the next step with the following prompt:
+	![Screenshot of step 4](Screenshots/Step4.png)
+15. As shown in the screenshot above, you have two options to continue with analysis:
+	+ Option 1: This will be the most common option especially if you are running a new analysis. If you have raw read files (FASTQ) for each sample and have not yet run TRACS, then this is the option you want to select. It will:
+		+ Trim your reads to remove junk sequences surrounding the sgRNA sequence barcodes
+		+ Build a reference library using library reference (CSV) file you provided in step 2.
+		+ Perform alignments of your raw reads to the library
+		+ Generate read counts from the alignments
+		+ Run the TRACS algorithm to determine gene essentiality
+	+ Option 2: If you have **already** run TRACS for the samples you have selected once before, **and** you have selected all of the same samples, entered the experiment name, experiment folder, and the initial and final condition names correctly, then you can skip most of the pre-processing steps before running the TRACS algorithm. This option will use the read counts file that TRACS previously created (located at ```ExperimentDirectory/readcounts/ExperimentName.count.txt```) and only run the TRACS algorithm to determine gene essentiality.
+
+16. Select option 1 or 2 by clicking on the respective buttons:
+	+ ```1. I have raw read files (FASTQ files). Do everything for me!```
+	+ ```2. I already have a read counts file (TXT). Just give me the essential genes!```
+
+17. TRACS will then automatically run all of the necessary steps without any further interaction from you! This may take a few hours depending on the performance of your computer, the number of samples you have, and the sequencing depth (number of reads per sample).
+
+You can monitor the progress using the command line/terminal window. You should see status updates during the pre-processing steps (trimming, alignment, read count generation). The final status output will look like this upon successful completion:
+	![Screenshot of step 3](Screenshots/Status.png)
+	
 # Step 5: Data visualization and exploration
