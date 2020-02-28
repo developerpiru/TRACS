@@ -490,7 +490,6 @@ Check the [Demo-files.md](Demo-files.md) file for information on how to download
 17. TRACS will then automatically run all of the necessary steps without any further interaction from you! This may take a few hours depending on the performance of your computer, the number of samples you have, and the sequencing depth (number of reads per sample).
 
 You can monitor the progress using the command line/terminal window. You should see status updates during the pre-processing steps (trimming, alignment, read count generation). The final status output will look like this upon successful completion:
-
 	![Screenshot of step 3](Screenshots/Status.png)
 	
 # Step 5: Data visualization and exploration
