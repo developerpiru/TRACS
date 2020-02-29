@@ -8,7 +8,7 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
 	+ [Select your desired installation method](https://github.com/developerpiru/TRACS#select-your-desired-installation-method)
 + [Install on headless\remote\cloud server](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
-	+ [Automatically install up VNC server on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#automatically-setting-up-vnc-server-on-ubuntu-may-also-work-for-mac-os-but-untested)
+	+ [Automatically install VNC server on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#automatically-setting-up-vnc-server-on-ubuntu-may-also-work-for-mac-os-but-untested)
 	+ [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)
 	+ [Connecting to VNC server on remote server](https://github.com/developerpiru/TRACS#connecting-to-vnc-server-on-remote-server)
 + [Natively installing TRACS (currently only Linux and Mac OS are supported natively)](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively)
@@ -67,7 +67,7 @@ You must first connect to your server's GUI desktop. If you are using a Windows 
 
 If you are using a Linux server, chances are it is currently only configured for ssh\terminal access. Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux server. **If you already have this setup and you can connect to the Linux desktop using VNC, you can skip this part and proceed to the instructions for installing TRACS natively.**
 
-## Automatically install up VNC server on Ubuntu (may also work for Mac OS but untested)
+## Automatically install VNC server on Ubuntu (may also work for Mac OS but untested)
 
 We have now created a bash shell script that will configure your Linux server with a GUI desktop. Follow the instructions below to do this automatically. 
 
