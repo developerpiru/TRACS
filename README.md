@@ -121,19 +121,25 @@ We have now created a bash shell script that will configure your Linux server wi
 
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
-	```unzip TRACSv1.1.1.zip```
+	```
+	unzip TRACSv1.1.1.zip
+	```
 	
 	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
-		```
-		sudo apt-get update
-		sudo apt install unzip
-		```
+	```
+	sudo apt-get update
+	sudo apt install unzip
+	```
 3. Change the permissions of the ```vnc-setup.sh``` script so it is executable:
-	```sudo chmod +x vnc-setup.sh```
+	```
+	sudo chmod +x vnc-setup.sh
+	```
 4. Run the script:
-	```bash vnc-setup.sh```
+	```
+	bash vnc-setup.sh
+	```
 
 You may now follow the instructions below to [install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer) so you can connect to your remote server.
 	
@@ -162,22 +168,22 @@ You are now connected to your remote server's desktop interface and can continue
 **Note:** to help you with downloading required components, it is recommended that you install Chrome or Firefox on your Linux server:
 
 Chrome:
-	
+	```
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	
+	```
 	
 Firefox:
-	
+	```
 	sudo apt-get update
 	sudo apt-get install firefox
-	
+	```
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
-	
+	```
 	vncserver -kill :1
-	
+	```
 ---
 ## Natively installing TRACS (currently only Linux and Mac OS are supported natively)
 
@@ -189,19 +195,25 @@ We have created a bash shell script that will automatically configure your compu
 
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
-	```unzip TRACSv1.1.1.zip```
+	```
+	unzip TRACSv1.1.1.zip
+	```
 	
 	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
-		```
-		sudo apt-get update
-		sudo apt install unzip
-		```
+	```
+	sudo apt-get update
+	sudo apt install unzip
+	```
 3. Change the permissions of the ```setup.sh``` script so it is executable:
-	```sudo chmod +x setup.sh```
+	```
+	sudo chmod +x setup.sh
+	```
 4. Run the script:
-	```bash setup.sh```
+	```
+	bash setup.sh
+	```
 
 This will install Python 3 including all of the required Python libraries () and other components (cutadapt, bowtie, samtools, mageck count function).
 
@@ -320,16 +332,16 @@ TRACS will launch in a Docker container and mount your local drives (```/Volumes
 	
 #### Launching TRACS Docker container on Linux
 Open a terminal window and enter this command to start the TRACS container:
-```
-docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
-```
+	```
+	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v /path/to/folder:/app/TRACS/sharedfolder tracs
+	```
 			
 Where ```/path/to/folder``` is your local drive/folder that you want to make available to the TRACS container.
 	
 For example:
-```
-docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
-```
+	```
+	docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu -v $HOME/:/app/TRACS/sharedfolder tracs
+	```
 
 TRACS will launch in a Docker container and mount your local drive or folder (```/path/to/folder```) at ```/app/TRACS/sharedfolder/``` in the Docker container so you can transport files from the container to your local drive.
 
