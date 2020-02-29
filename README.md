@@ -3,7 +3,7 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 
 # Table of contents
 + [Introduction](https://github.com/developerpiru/TRACS#introduction)
-+ [Quick start guide](https://github.com/developerpiru/TRACS##quick-start-guide)
++ [Quick start guide](https://github.com/developerpiru/TRACS#quick-start-guide)
 + [Installation methods](https://github.com/developerpiru/TRACS#installation-methods)
 	+ [Local machine or cloud\remote server (headless servers)](https://github.com/developerpiru/TRACS#local-machine-or-cloudremote-server-headless-servers)
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
