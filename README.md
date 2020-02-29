@@ -8,13 +8,12 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
 	+ [Select your desired installation method](https://github.com/developerpiru/TRACS#select-your-desired-installation-method)
 + [Install on headless\remote\cloud server](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
-	+ [Manually setting up VNC on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#manually-setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested)
+	+ []()
 	+ [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)
 	+ [Connecting to VNC server on remote server](https://github.com/developerpiru/TRACS#connecting-to-vnc-server-on-remote-server)
 + [Natively installing TRACS (currently only Linux and Mac OS are supported natively)](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively)
-	+ [Requirements](https://github.com/developerpiru/TRACS#requirements)
-	+ [Installing required components](https://github.com/developerpiru/TRACS#installing-required-components)
-	+ [Installing TRACS natively](https://github.com/developerpiru/TRACS#installing-tracs-natively)
+	+ [Automatically install all required components](https://github.com/developerpiru/TRACS#automatically-install-all-required-components)
+	+ [Start TRACS](https://github.com/developerpiru/TRACS#start-tracs)
 + [Using TRACS with Docker](https://github.com/developerpiru/TRACS#using-tracs-with-docker)
 	+ [Docker on Windows](https://github.com/developerpiru/TRACS#docker-on-windows)
 	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
@@ -70,7 +69,7 @@ If you are using a Linux server, chances are it is currently only configured for
 
 ## Automatically setting up VNC on Ubuntu (may also work for Mac OS but untested)
 
-We have now created a bash shell script that will configure your Linux server with a GUI desktop. Follow the instructions below to do this automatically. Otherwise you may perform this step manually using [these instructions further down](https://github.com/developerpiru/TRACS#manually-setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested).
+We have now created a bash shell script that will configure your Linux server with a GUI desktop. Follow the instructions below to do this automatically. 
 
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
 2. Extract the files:
@@ -86,42 +85,7 @@ We have now created a bash shell script that will configure your Linux server wi
 4. Run the script:
 	```bash vnc-server.sh```
 
-You may now proceed to [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer) so you can connect to your remote server.
-
-## Manually setting up VNC on Ubuntu (may also work for Mac OS but untested)
-1. Install VNC server and xfce4 components:
-	```
-	sudo apt update
-	sudo apt install xfce4 xfce4-goodies
-	```
-2. Install Tight VNC Server:
-	```
-	sudo apt install tightvncserver
-	```
-3. Run initial VNC server configuration to setup a password. You can say no to a "view only password":
-	```
-	vncserver
-	```
-4. Exit VNC server:
-	```
-	vncserver -kill :1
-	```
-5. Edit the VNC server configuration file to start xfce4 desktop on launch:
-	```
-	sudo nano ~/.vnc/xstartup
-	```
-6. Replace the contents of the file with the following:
-	```
-	#!/bin/bash
-	xrdb $HOME/.Xresources
-	startxfce4 &
-	```
-7. Save the file and exit (press Control + X and confirm to save).
-
-8. Edit the permissions of the file:
-	```
-	sudo chmod +x ~/.vnc/xstartup
-	```
+You may now follow the instructions below to [install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer) so you can connect to your remote server.
 	
 ## Install VNC client on your local computer
 You need a VNC client to connect to the VNC server you just setup on your remote server. 
