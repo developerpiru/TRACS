@@ -35,9 +35,11 @@ TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TR
 
 Here is a quick installation guide to get TRACS setup quickly if you don't want to read the detailed instructions:
 
-1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```unzip TRACSv1.1.1.zip```
+	
+	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 		```
@@ -105,9 +107,11 @@ If you are using a Linux server, chances are it is currently only configured for
 
 We have now created a bash shell script that will configure your Linux server with a GUI desktop. Follow the instructions below to do this automatically. 
 
-1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```unzip TRACSv1.1.1.zip```
+	
+	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 		```
@@ -171,9 +175,11 @@ Once you can connect to your remote server's GUI desktop, or if you are installi
 
 We have created a bash shell script that will automatically configure your computer with all of the required components with minimal user input. 
 
-1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```unzip TRACSv1.1.1.zip```
+	
+	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 		```
