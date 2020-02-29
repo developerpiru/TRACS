@@ -8,7 +8,7 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
 	+ [Select your desired installation method](https://github.com/developerpiru/TRACS#select-your-desired-installation-method)
 + [Install on headless\remote\cloud server](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
-	+ [Setting up VNC on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested)
+	+ [Manually setting up VNC on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#manually-setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested)
 	+ [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)
 	+ [Connecting to VNC server on remote server](https://github.com/developerpiru/TRACS#connecting-to-vnc-server-on-remote-server)
 + [Natively installing TRACS (currently only Linux and Mac OS are supported natively)](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively)
@@ -32,7 +32,7 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
 
 # Installation methods
-There are several ways to install TRACS and each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. While this means (for the time being) you cannnot run TRACS natively on Windows, you can still use Docker (or other VM solution).
+There are several ways to install TRACS and each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. While this means (for the time being) you cannnot run TRACS natively on Windows, you can still use [Docker](https://www.docker.com/get-started) (or other VM solution).
 
 Please see the instructions below for your operating system for the best way to get started.
 
@@ -44,11 +44,11 @@ As with any high-throughput sequencing analysis method, the more powerful the co
 
 A Linux server running Ubuntu 18.04 LTS is recommended for AWS, GCP, Azure, or other Linux VM cloud provider. If you are unfamiliar with Linux, you can also use a Windows 10 Pro instance on Azure and install TRACS using Docker. In Azure, select a [Dv3 or Ev3 based VM which support Nested Virtualization](https://azure.microsoft.com/en-us/blog/introducing-the-new-dv3-and-ev3-vm-sizes/) so that you can use Docker. At this time, AWS does not support Nested Virtualization while [GCP supports it on Linux only](https://cloud.google.com/compute/docs/instances/enable-nested-virtualization-vm-instances).
 
-**Note:** Nested Virtualization is only required to run Linux-based Docker containers in a Linux VM. Hence if you want to do this, use Azure.
+**Note:** Nested Virtualization is only required to run Linux-based Docker containers in a Linux VM. So if you want to do this, use Azure.
 
 
 ## Using TRACS natively or in a Docker container
-Secondly, you need to decide whether you will run **TRACS natively** on your local or remote server, or if you will run it inside a **Docker container** (a VM instance). Our Docker container provides a ready-to-go virtual instance with TRACS and all of its required components installed. All you have to do is download and build the container (a one time step). Of course, you must have Docker isntalled. This will allow you to run TRACS on Windows, Linux, or Mac OS.
+Secondly, you need to decide whether you will run **TRACS natively** on your local or remote server, or if you will run it inside a **Docker container** (a VM instance). Our Docker container provides a ready-to-go virtual instance with TRACS and all of its required components installed. All you have to do is download and build the container (a one time step). Of course, you must have [Docker](https://www.docker.com/get-started) installed. This will allow you to run TRACS on Windows, Linux, or Mac OS.
 
 
 You can also install TRACS natively without the need for Docker in Linux and Mac OS. To do this, you must have Python 3.6+ installed, along with Bowtie2, Cutadapt, and MAGeCK 0.5.5.
@@ -66,9 +66,29 @@ You can also install TRACS natively without the need for Docker in Linux and Mac
 
 You must first connect to your server's GUI desktop. If you are using a Windows server (Windows 10 or any Windows Server OS), you can connect to it using Remote Desktop Connection from any host Windows OS and you will see the desktop automatically. If you are using a Mac OS server, you can you can install the Microsoft Remote Desktop App through the App Store to connect to a remote Mac OS or Windows server. Alternatively, you may follow the instructions below to setup VNC on your Mac OS server. If you are connecting to a Linux server, you must first ssh into your server and setup a VNC server as described below.
 
-If you are using a Linux server, chances are it is currently only configured for ssh\terminal access. Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux server. **If you already have this setup and you can connect to the Ubuntu desktop using VNC, you can skip this part and proceed to the instructions for installing TRACS natively.**
+If you are using a Linux server, chances are it is currently only configured for ssh\terminal access. Since TRACS is a GUI program, it is critical that you have an X window system setup on your Linux server. **If you already have this setup and you can connect to the Linux desktop using VNC, you can skip this part and proceed to the instructions for installing TRACS natively.**
 
-## Setting up VNC on Ubuntu (may also work for Mac OS but untested)
+## Automatically setting up VNC on Ubuntu (may also work for Mac OS but untested)
+
+We have now created a bash shell script that will configure your Linux server with a GUI desktop. Follow the instructions below to do this automatically. Otherwise you may perform this step manually using [these instructions further down](https://github.com/developerpiru/TRACS#manually-setting-up-vnc-on-ubuntu-may-also-work-for-mac-os-but-untested).
+
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+2. Extract the files:
+	```unzip TRACSv1.1.1.zip```
+	
+	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
+		```
+		sudo apt-get update
+		sudo apt install unzip
+		```
+3. Change the permissions of the ```vnc-setup.sh``` script so it is executable:
+	```sudo chmod +x vnc-server.sh```
+4. Run the script:
+	```bash vnc-server.sh```
+
+You may now proceed to [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer) so you can connect to your remote server.
+
+## Manually setting up VNC on Ubuntu (may also work for Mac OS but untested)
 1. Install VNC server and xfce4 components:
 	```
 	sudo apt update
@@ -108,6 +128,8 @@ You need a VNC client to connect to the VNC server you just setup on your remote
 
 You can install either PuTTY for Windows (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or RealVNC's VNC Viewer for Windows, Mac OS, or Linux (https://www.realvnc.com/en/connect/download/viewer/)
 
+See below for instructions on how to connect to your remote server.
+
 ## Connecting to VNC server on remote server
 1. Start the VNC server with this command on your remote server:
 	```
@@ -145,171 +167,43 @@ You can stop the VNC server using this command:
 ---
 ## Natively installing TRACS (currently only Linux and Mac OS are supported natively)
 
-Once you can connect to your remote server's GUI desktop, or if you are installing TRACS on a local machine, you can proceed with the following instructions to install TRACS natively. If you'd like to install TRACS in a Docker container instead, [please see these instructions](https://github.com/developerpiru/TRACS#using-tracs-with-docker).
+Once you can connect to your remote server's GUI desktop, or if you are installing TRACS on a local machine, you can proceed with the following instructions to install TRACS natively. If you'd like to install TRACS in a Docker container instead, [please see these instructions](https://github.com/developerpiru/TRACS#using-tracs-with-docker). Docker containers provide a Linux VM instance with everything configured and ready to go so you can start using TRACS quickly. 
 
-### Requirements
-You must have the following components installed on your Linux or Mac OS device to run TRACS:
-1. Python 3.6+
-2. Tkinter, pandas, scipy, and numpy packages for Python 3
-3. Cutadapt (recommended version 1.18)
-4. Bowtie2 (recommended version 2.3.4.2)
-5. Samtools (recommended version 1.9)
-6. MAGeCK (only version 0.5.5 supported)
+### Automatically install all required components
 
-If you try to run TRACS and get errors during launch, it is likely you are missing the Tkinter, Pandas, Scipy, or Numpy packages.
+We have created a bash shell script that will automatically configure your computer with all of the required components with minimal user input. 
 
-If you get errors during analysis, you likely don't have Cutadapt, Bowtie2, Samtools, or MAGeCK properly installed or configured.
-
-**Note:** If you are using Ubuntu 18.04 LTS or later, chances are you already have Python 3.6+ installed.
-
-If you are unsure whether you have these components installed, here is an easy way to check (run these commands in a Terminal:
-
-**Python 3.6+:**
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+2. Extract the files:
+	```unzip TRACSv1.1.1.zip```
 	
-	python --version
-		
-If installed, you should see the current version of Python.
+	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
+		```
+		sudo apt-get update
+		sudo apt install unzip
+		```
+3. Change the permissions of the ```setup.sh``` script so it is executable:
+	```sudo chmod +x setup.sh```
+4. Run the script:
+	```bash setup.sh```
 
-
-**Cutadapt:**
-
-	cutadapt --version
-	
-If installed, you should see the current version of Cutadapt.
-
-
-**Bowtie2:**
-
-	bowtie2 --version
-	
-If installed, you should see the current version of Bowtie2.
-
-
-**Samtools:**
-
-	samtools --version
-	
-If installed, you should see the current version of Samtools.
-
-
-**MAGeCK:**
-
-	mageck --version
-	
-If installed, you should see the current version of MAGeCK.
-  
-  
-To determine if you have the correct **Python packages installed**, start Python:
-	
-	python3
-	
-Then import each package from the Python 3 command prompt:
-	
-	>>>  import tkinter
-
-	>>>  import pandas
-	
-	>>>  import scipy
-	
-	>>>  import numpy
-	
-	>>>  exit()
-
-
-If you are able to import each without errors, you have them installed. If you receive a `ModuleNotFoundError` error, you need to install that package.
-
-If you have each of these required components installed, you can continue with the instructions to [natively installing TRACS in Linux or Mac OS](https://github.com/developerpiru/TRACS#installing-tracs-natively).
-
-If these required components are missing or you don't have at least the recommended versions installed, you can follow the [instructions below to install them](https://github.com/developerpiru/TRACS#installing-required-components). 
-
-**Note:** For MAGeCK, we find versions after 0.5.5 cause errors. For the purposes of TRACS, MAGeCK is only used to generate read counts so version 0.5.5 is sufficient and need not be upgraded.
-
-### Installing required components
-Update sources before you begin:
-	
-	sudo apt-get update
-	
-	
-Installing Python 3:
-
-	sudo apt-get install python3
-
-
-Installing tkinter for Python3:
-
-	sudo apt-get install python3-tk
-
-	
-Installing pandas for Python3:
-
-	sudo apt-get install python3-pandas
-
-Installing scipy for Python3:
-
-	sudo apt-get install python3-scipy
-
-Installing pandas will usually install numpy as well. In case it didn't, you can install it as follows:
-
-	sudo apt-get install python3-numpy
-
-
-Installing Cutadapt:
-
-	sudo apt-get install cutadapt
-
-
-Installing Bowtie2:
-
-	sudo apt-get install bowtie2
-
-
-Installing Samtools:
-
-	sudo apt-get install samtools 
-
-	
-Installing MAGeCK:
-To install MAGeCK, we recommend building it from source. This requires some additional packages not required by TRACS but required to build from source:
-
-	sudo apt-get install python3-distutils python3-dev build-essential
-
-
-Then download MAGeCK 0.5.5 using ```wget``` or paste the link into a browser:
-
-	wget http://www.dkfz.de/signaling/crispranalyzer/mageck-0.5.5.tar.gz
-
-	
-Then extract and run the setup script (make sure you are in the correct directory if you used a browser to download!):
-
-	tar xvf mageck-0.5.5.tar.gz
-	cd mageck-0.5.5
-	sudo python setup.py install
-
-
-Go back to the previous steps under the [Requirements](https://github.com/developerpiru/TRACS#requirements) section and ensure each component is installed as described above. Otherwsie, you can now [install TRACS natively](https://github.com/developerpiru/TRACS#installing-tracs-natively).
+This will install Python 3 including all of the required Python libraries () and other components (cutadapt, bowtie, samtools, mageck count function).
 
 ### Installing TRACS natively
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
 1. Access the desktop of your Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)).
 
-2. Download the TRACS zip file from our github repository ([here](https://github.com/developerpiru/TRACS/tree/master/Releases)).
-
-3. Extract the TRACSv1.1.1 folder to any location you desire.
-	
-	Where v1.1.1 is the version number of the release you downloaded.
-
-4. Open a Terminal window and nagvigate to that folder. 
+2. Open a Terminal window and nagvigate to the folder where you extracted TRACS.
 
 5. Enter this command to start TRACS:
 	```
-	python3 TRACS_v1.1.1.py
+	python3 TRACS.py
 	```
-	Where v1.1.1 is the version number of the release you downloaded.
 ---
 ## Using TRACS with Docker
 
-Access the desktop of your Windows, Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)).
+Connect to the desktop of your Windows, Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)).
 
 - [Docker on Windows](https://github.com/developerpiru/TRACS#docker-on-windows)
 - [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
