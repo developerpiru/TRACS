@@ -3,6 +3,7 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 
 # Table of contents
 + [Introduction](https://github.com/developerpiru/TRACS#introduction)
++ [Quick start guide](https://github.com/developerpiru/TRACS##quick-start-guide)
 + [Installation methods](https://github.com/developerpiru/TRACS#installation-methods)
 	+ [Local machine or cloud\remote server (headless servers)](https://github.com/developerpiru/TRACS#local-machine-or-cloudremote-server-headless-servers)
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
@@ -29,6 +30,39 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 
 # Introduction
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
+
+# Quick start guide
+
+Here is a quick installation guide to get TRACS setup quickly if you don't want to read the detailed instructions:
+
+1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/TRACSv1.1.1.zip
+2. Extract the files:
+	```unzip TRACSv1.1.1.zip```
+	
+	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
+		```
+		sudo apt-get update
+		sudo apt install unzip
+		```
+3. Change the permissions of the ```setup.sh``` script so it is executable:
+	```sudo chmod +x setup.sh```
+4. Run the script:
+	```bash setup.sh```
+
+***Optional:*** if you are install on a headless remote Linux server without a desktop interface configured, you must install a desktop environment and install VNC server so you can connect to it:
+	+ Change the permissions of the ```vnc-setup.sh``` script so it is executable:
+		```sudo chmod +x vnc-server.sh```
+	+ Run the script:
+		```bash vnc-setup.sh```
+	+ Start VNC server
+		```vncserver -geometry 1200x1050```
+	+ Connect to your server using a VNC client
+5. Nagvigate to the folder where you extracted TRACS in step 2.
+
+6. Enter this command to start TRACS:
+	```
+	python3 TRACS.py
+	```
 
 # Installation methods
 There are several ways to install TRACS and each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. While this means (for the time being) you cannnot run TRACS natively on Windows, you can still use [Docker](https://www.docker.com/get-started) (or other VM solution).
@@ -81,9 +115,9 @@ We have now created a bash shell script that will configure your Linux server wi
 		sudo apt install unzip
 		```
 3. Change the permissions of the ```vnc-setup.sh``` script so it is executable:
-	```sudo chmod +x vnc-server.sh```
+	```sudo chmod +x vnc-setup.sh```
 4. Run the script:
-	```bash vnc-server.sh```
+	```bash vnc-setup.sh```
 
 You may now follow the instructions below to [install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer) so you can connect to your remote server.
 	
