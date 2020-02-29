@@ -168,22 +168,22 @@ You are now connected to your remote server's desktop interface and can continue
 **Note:** to help you with downloading required components, it is recommended that you install Chrome or Firefox on your Linux server:
 
 Chrome:
-	```
+	
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	```
+	
 	
 Firefox:
-	```
+	
 	sudo apt-get update
 	sudo apt-get install firefox
-	```
+	
 
 #### Stopping the VNC server
 You can stop the VNC server using this command:
-	```
+	
 	vncserver -kill :1
-	```
+	
 ---
 ## Natively installing TRACS (currently only Linux and Mac OS are supported natively)
 
