@@ -153,7 +153,7 @@ We have created a bash shell script that will automatically configure your compu
 
 This will install Python 3 including all of the required Python libraries () and other components (cutadapt, bowtie, samtools, mageck count function).
 
-### Launch TRACS
+### Start TRACS
 Once you have all of the requirement components installed, you are ready to install TRACS!
 
 1. Access the desktop of your Linux or Mac OS device. You need to connect remotely to the desktop if you are using a remote\cloud server ([see instructions above](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)).
