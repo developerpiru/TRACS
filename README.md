@@ -44,10 +44,10 @@ Here is a quick installation guide to get TRACS setup quickly if you don't want 
 	Where ```v1.1.1``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
-		```
-		sudo apt-get update
-		sudo apt install unzip
-		```
+	```
+	sudo apt-get update
+	sudo apt install unzip
+	```
 3. Change the permissions of the ```setup.sh``` script so it is executable:
 	```
 	sudo chmod +x setup.sh
