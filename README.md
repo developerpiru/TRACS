@@ -1,5 +1,5 @@
 # TRACS
-Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR screens
+**T**oolset for **R**anked **A**nalysis of **C**RISPR **S**creens - a GUI tool to analyze CRISPR screens
 
 # Introduction
 TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation). 
