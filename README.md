@@ -60,7 +60,7 @@ Here is a quick installation guide to get TRACS setup quickly if you don't want 
 	bash setup.sh
 	```
 
-	***Optional:*** if you are install on a headless remote Linux server without a desktop interface configured, you must install a desktop environment and install VNC server so you can connect to it:
+	***Optional:*** if you are installing on a headless remote Linux server without a desktop interface configured, you must install a desktop environment and install VNC server so you can connect to it:
 	+ Change the permissions of the ```vnc-setup.sh``` script so it is executable:
 		```
 		sudo chmod +x vnc-server.sh
