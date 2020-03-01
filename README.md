@@ -441,10 +441,10 @@ A typical analysis can take 2-6 hours (or more) depending on how powerful your c
 
 You can monitor the progress using the command line/terminal window. You should see status updates during the pre-processing steps (trimming, alignment, read count generation). The final status output will look like this upon successful completion:
 
-![Screenshot of step 3](Screenshots/Status.png)
+![Screenshot of step 3](Screenshots/Status2.png)
 
 18. Your experiment folder will now contain the following files and folders:
-	![Screenshot of experiment folder](Screenshots/Experimentfolder.png)
+	![Screenshot of experiment folder](Screenshots/Experimentfolder2.png)
 
 Notice the different folders that are created by each of the pre-processing steps. **Note:** do not modify the contents of these folders in case you want to run TRACS again using option 2, as described above.
 
