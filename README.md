@@ -444,7 +444,7 @@ You can monitor the progress using the command line/terminal window. You should 
 ![Screenshot of step 3](Screenshots/Status2.png)
 
 18. Your experiment folder will now contain the following files and folders:
-	![Screenshot of experiment folder](Screenshots/Experimentfolder2.png)
+	![Screenshot of experiment folder](Screenshots/Experimentfolder3.png)
 
 Notice the different folders that are created by each of the pre-processing steps. **Note:** do not modify the contents of these folders in case you want to run TRACS again using option 2, as described above.
 
