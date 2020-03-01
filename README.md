@@ -1,8 +1,13 @@
 # TRACS
 Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR screens
 
+# Introduction
+TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
+
+Data output from TRACS can be visualized using [VisualizeTRACS](https://github.com/developerpiru/VisualizeTRACS).
+---
+
 # Table of contents
-+ [Introduction](https://github.com/developerpiru/TRACS#introduction)
 + [Quick start guide](https://github.com/developerpiru/TRACS#quick-start-guide)
 + [Installation methods](https://github.com/developerpiru/TRACS#installation-methods)
 	+ [Local machine or cloud\remote server (headless servers)](https://github.com/developerpiru/TRACS#local-machine-or-cloudremote-server-headless-servers)
@@ -27,9 +32,6 @@ Toolset for Ranked Analysis of CRISPR Screens - a GUI tool to analyze CRISPR scr
 	+ [Step 4: Run TRACS analysis](https://github.com/developerpiru/TRACS#step-4-run-tracs-analysis)
 	+ [Step 5: Data visualization and exploration](https://github.com/developerpiru/TRACS#step-5-data-visualization-and-exploration)
 ---
-
-# Introduction
-TRACS is a GUI (graphic user interface) based tool to analyze CRISPR screens. TRACS uses a ranking algorithm to identify sgRNAs and their respective genes that dropout or become enriched in experimental conditions. It requires you to provide sequencing data for a negative control conditon (cells tha do not express Cas9) and from the initial library preparation (plasmid preparation).
 
 # Quick start guide
 
