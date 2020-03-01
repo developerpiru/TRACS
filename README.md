@@ -80,6 +80,12 @@ Here is a quick installation guide to get TRACS setup quickly if you don't want 
 	```
 	python3 TRACS.py
 	```
+	
+	***Note:*** if you get permission errors, run as sudo:
+	```
+	sudo python3 TRACS.py
+	```
+	
 
 # Installation methods
 There are several ways to install TRACS and each one is covered below. TRACS is written in Python 3.6 so will run on any operating system with Python 3.6+ installed, incluing Windows, Linux, and Mac OS. However, it relies on several dependencies which are not currently available on Windows. While this means (for the time being) you cannnot run TRACS natively on Windows, you can still use [Docker](https://www.docker.com/get-started) (or other VM solution).
@@ -230,6 +236,11 @@ Once you have all of the requirement components installed, you are ready to inst
 5. Enter this command to start TRACS:
 	```
 	python3 TRACS.py
+	```
+
+	***Note:*** if you get permission errors, run as sudo:
+	```
+	sudo python3 TRACS.py
 	```
 ---
 ## Using TRACS with Docker
