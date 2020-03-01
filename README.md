@@ -382,7 +382,7 @@ A typical analysis can take 2-6 hours (or more) depending on how powerful your c
 1. Follow the instructions above to install and launch TRACS according to your desired method.
 2. In the main TRACS window, click on ```Start New Experiment```.
 3. You will be presented with Step 1 of the experiment wizard shown below:
-	![Screenshot of step 1](Screenshots/Step1.png)
+	![Screenshot of step 1](Screenshots/Step1a.png)
 4. Here you need to define the following:
 	+ ```Experiment name```: Enter an identifying name for your project. All of the files created by TRACS will have this name as the prefix.
 	+ ```Experiment directory```: Entire a folder to store all of the files created by TRACS. It is recommended that you make a new folder to keep things organized. TRACS will create subdirectories and files within this main folder.
