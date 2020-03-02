@@ -41,10 +41,10 @@ Here is a quick installation guide to get TRACS setup quickly if you don't want 
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```
-	unzip TRACSv1.1.1.zip
+	unzip TRACSv1.1.2.zip
 	```
 	
-	Where ```v1.1.1``` is the version number.
+	Where ```v1.1.2``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 	```
@@ -131,10 +131,10 @@ We have now created a bash shell script that will configure your Linux server wi
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```
-	unzip TRACSv1.1.1.zip
+	unzip TRACSv1.1.2.zip
 	```
 	
-	Where ```v1.1.1``` is the version number.
+	Where ```v1.1.2``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 	```
@@ -205,10 +205,10 @@ We have created a bash shell script that will automatically configure your compu
 1. Download the latest TRACS setup files here: https://github.com/developerpiru/TRACS/blob/master/Releases/
 2. Extract the files:
 	```
-	unzip TRACSv1.1.1.zip
+	unzip TRACSv1.1.2.zip
 	```
 	
-	Where ```v1.1.1``` is the version number.
+	Where ```v1.1.2``` is the version number.
 	
 	***Note:*** if you don't have ```unzip``` installed, you can install it using this command:
 	```
