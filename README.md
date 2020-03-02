@@ -257,8 +257,6 @@ Connect to the desktop of your Windows, Linux or Mac OS device. You need to conn
 
 	If you have an older version of Windows (or Windows 10 Home) you will need to install Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 
-	**Note:** you may have to sign up for free with Docker before you can download.
-
 	Follow the instructions on the respective Docker pages for installing Docker and getting it running.
 
 2. Download and install XMing X Server for Windows: https://sourceforge.net/projects/xming/
