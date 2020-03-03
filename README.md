@@ -15,7 +15,7 @@ Data output from TRACS can be visualized using the companion app, [VisualizeTRAC
 	+ [Using TRACS natively or in a Docker container](https://github.com/developerpiru/TRACS#using-tracs-natively-or-in-a-docker-container)
 	+ [Select your desired installation method](https://github.com/developerpiru/TRACS#select-your-desired-installation-method)
 + [Install on headless\remote\cloud server](https://github.com/developerpiru/TRACS#install-on-headlessremotecloud-server)
-	+ [Automatically install VNC server on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#automatically-setting-up-vnc-server-on-ubuntu-may-also-work-for-mac-os-but-untested)
+	+ [Automatically install VNC server on Ubuntu (may also work for Mac OS but untested)](https://github.com/developerpiru/TRACS#automatically-install-vnc-server-on-ubuntu-may-also-work-for-mac-os-but-untested)
 	+ [Install VNC client on your local computer](https://github.com/developerpiru/TRACS#install-vnc-client-on-your-local-computer)
 	+ [Connecting to VNC server on remote server](https://github.com/developerpiru/TRACS#connecting-to-vnc-server-on-remote-server)
 + [Natively installing TRACS (currently only Linux and Mac OS are supported natively)](https://github.com/developerpiru/TRACS#natively-installing-tracs-currently-only-linux-and-mac-os-are-supported-natively)
