@@ -26,7 +26,7 @@ def init_vars():
         "Trimmed read file": "-trimmed.fastq",          # file suffix for trimmed reads
         "Fasta library file": "-fasta.fa",              # file suffix for bam file
         "Aligned bam file": ".bam",                     # file suffix for bam files
-        "Alignments dir": "alignments",                 # folder for alignments
+        "Alignments dir": "trimmed-reads",              # folder for alignments
         "Trimmed dir": "trimmed-reads",                 # folder for trimmed-reads
         "Readcounts dir": "readcounts",                 # folder for read counts
         "Cas9 pos tag": "-Cas9-pos",                    # tag to add to Cas9 positive files
