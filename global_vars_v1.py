@@ -6,9 +6,9 @@ def init_vars():
         "Experiment directory": "",                     # experiment directory
         "Initial condition name": "",                   # name of initial condition (day 0)
         "Final condition name": "",                     # name of final condition (day X)
-        "Library reference file": "",                   # path to library reference file
         "FDR": "",                                      # false discovery rate percentage as decimal
-        "CPU cores": ""                                 # number of CPU cores to use
+        "CPU cores": "",                                # number of CPU cores to use
+        "Library reference file": ""                    # path to library reference file
     }
 
     global LIBRARY_READ_PATH, LIST_INITIAL_PATHS, LIST_FINAL_PATHS, LIST_CAS9_NEG_I_PATHS, LIST_CAS9_NEG_F_PATHS
