@@ -14,7 +14,7 @@ Data output from TRACS can be visualized using the companion app, [VisualizeTRAC
 	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
 	+ [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
 + [Demo files](https://github.com/developerpiru/TRACS#demo-files)
-+ [Data visualization and exploration](https://github.com/developerpiru/TRACS#step-5-data-visualization-and-exploration)
++ [Data visualization and exploration](https://github.com/developerpiru/TRACS#data-visualization-and-exploration)
 ---
 
 
