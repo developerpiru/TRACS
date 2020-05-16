@@ -14,12 +14,7 @@ Data output from TRACS can be visualized using the companion app, [VisualizeTRAC
 	+ [Docker on Mac OS](https://github.com/developerpiru/TRACS#docker-on-mac-os)
 	+ [Docker on Linux](https://github.com/developerpiru/TRACS#docker-on-linux)
 + [Demo files](https://github.com/developerpiru/TRACS#demo-files)
-+ [Analysis tutorial](https://github.com/developerpiru/TRACS#analysis-tutorial)
-	+ [Step 1: Starting a new analysis](https://github.com/developerpiru/TRACS#step-1-starting-a-new-analysis)
-	+ [Step 2: Loading library files and Cas9-positive read files](https://github.com/developerpiru/TRACS#step-2-loading-library-files-and-cas9-positive-read-files)
-	+ [Step 3: Loading Cas9-negative read files](https://github.com/developerpiru/TRACS#step-3-loading-cas9-negative-read-files)
-	+ [Step 4: Run TRACS analysis](https://github.com/developerpiru/TRACS#step-4-run-tracs-analysis)
-	+ [Step 5: Data visualization and exploration](https://github.com/developerpiru/TRACS#step-5-data-visualization-and-exploration)
++ [Data visualization and exploration](https://github.com/developerpiru/TRACS#step-5-data-visualization-and-exploration)
 ---
 
 
