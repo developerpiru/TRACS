@@ -30,7 +30,9 @@ def init_vars():
         "Trimmed dir": "trimmed-reads",                 # folder for trimmed-reads
         "Readcounts dir": "readcounts",                 # folder for read counts
         "Cas9 pos tag": "-Cas9-pos",                    # tag to add to Cas9 positive files
-        "Cas9 neg tag": "-Cas9-neg"                     # tag to add to Cas9 negative files
+        "Cas9 neg tag": "-Cas9-neg",                    # tag to add to Cas9 negative files
+        "Run settings": "-run_settings.txt",            # file suffix for TRACS run settings file
+        "Log file": "-run_log.log"                      # file suffix for TRACS run log file
     }
 
     global CAS9_TYPE_NAMING
@@ -55,3 +57,6 @@ def init_vars():
         "Cas9 neg": "_Cas9neg-"                         # suffix for Cas9-negative samples - used in TRACS algorithm
     }
 
+    global show_in_console, status_label, progress_bar, total_steps, current_step, btnStart, btnVisualize
+    show_in_console = False                             # flag to turn on/off some messages in console/terminal window
+    current_step = 0                                    # stores the current step in analysis
