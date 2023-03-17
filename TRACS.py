@@ -1259,35 +1259,34 @@ class StartAnalysis(tk.Frame):
             return
 
         # build index
-        #result = self.build_index()
-        #if result is False:
-        #    msg = "Error encountered during index assembly. " \
-        #          "\nCould not create index files!" \
-        #          "\nStopping TRACS."
-        #    write_to_log(msg)
-        #    messagebox.showerror(title="Error",
-        #                         message=msg)
-        #    return
+        result = self.build_index()
+        if result is False:
+            msg = "Error encountered during index assembly. " \
+                  "\nCould not create index files!" \
+                  "\nStopping TRACS."
+            write_to_log(msg)
+            messagebox.showerror(title="Error",
+                                 message=msg)
+            return
 
         # update progress bar
         self.update_progressbar()
 
         # align reads
-        #write_to_log("Aligning reads with library index...")
+        write_to_log("Aligning reads with library index...")
 
         # call do_bowtie2_alignment function to align the library reads using bowtie2
-        # Library reads
-        #result = self.do_bowtie2_alignment(file_list=global_vars.LIBRARY_READ_PATH,
-        #                          condition_name="Library",
-        #                          cas9_type="")
-        #if result is False:
-        #    msg = "Error encountered during library alignment." \
-        #          "\nCould not create alignment file!" \
-        #          "\nStopping TRACS."
-        #    write_to_log(msg)
-        #    messagebox.showerror(title="Error",
-        #                         message=msg)
-        #    return
+        result = self.do_bowtie2_alignment(file_list=global_vars.LIBRARY_READ_PATH,
+                                  condition_name="Library",
+                                  cas9_type="")
+        if result is False:
+            msg = "Error encountered during library alignment." \
+                  "\nCould not create alignment file!" \
+                  "\nStopping TRACS."
+            write_to_log(msg)
+            messagebox.showerror(title="Error",
+                                 message=msg)
+            return
 
         # update progress bar
         self.update_progressbar()
@@ -1674,7 +1673,7 @@ class StartAnalysis(tk.Frame):
                         sys.stdout.write(output)
                         sys.stdout.flush()
         else:
-            write_to_log("Could not access trimmed library FASTQ file!")
+            write_to_log("Could not access library bam file!")
             return False
 
         write_to_log("Finished calculating read counts!")
