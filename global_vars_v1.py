@@ -1,3 +1,6 @@
+# version 1.1.18 from 2019-2020
+
+
 def init_vars():
 
     global EXPERIMENT_SETTINGS
