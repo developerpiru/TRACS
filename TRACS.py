@@ -1,6 +1,4 @@
-# version 1.1.18 from 2019-2020
-#
-#
+# version 1.1.19 2023
 
 
 import tkinter as tk
