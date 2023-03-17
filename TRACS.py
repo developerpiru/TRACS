@@ -19,7 +19,7 @@ import _thread
 import global_vars_v1 as global_vars
 
 # version
-app_version = "1.1.8"
+app_version = "1.1.9"
 
 # TRACS: Toolset for the Ranked Analysis of CRISPR Screens
 # Created by Pirunthan Perampalam
@@ -363,7 +363,7 @@ class NewExpSettings(tk.Frame):
         # false discovery rate (FDR) for stats
         fr_6 = tk.Frame(fr_main_1, relief=controller.frame_relief, borderwidth=controller.frame_borderwidth, bg="#3d6fdb")
         fr_6.pack(fill=X, padx=5, pady=5, anchor=N, expand=True)
-        lbl_fdr = tk.Label(fr_6, text="False discovery rate (e.g. 0.05 for 5%)", width="40", font=controller.label_font, bg="#3d6fdb", fg="white")
+        lbl_fdr = tk.Label(fr_6, text="False discovery rate (e.g. 5 for 5%)", width="40", font=controller.label_font, bg="#3d6fdb", fg="white")
         lbl_fdr.pack(side=LEFT, padx=5, pady=5)
         self.txt_fdr = Entry(fr_6)
         self.txt_fdr.pack(fill=X, padx=5, pady=5, expand=True)
@@ -443,11 +443,11 @@ class NewExpSettings(tk.Frame):
         # FDR
         if self.controller.frames['NewExpSettings'].txt_fdr.get() != "":
             if not self.controller.frames['NewExpSettings'].txt_fdr.get().isdigit():
-                error_log = error_log + "\n\nFalse discovery rate must be a number"
+                error_log = error_log + "\n\nFalse discovery rate must be a whole number"
         # CPU cores
         if self.controller.frames['NewExpSettings'].txt_cores.get() != "":
             if not self.controller.frames['NewExpSettings'].txt_cores.get().isdigit():
-                error_log = error_log + "\n\nNumber of CPU cores must be a number"
+                error_log = error_log + "\n\nNumber of CPU cores must be a whole number"
 
         # check condition names and make sure they are unique (can't have same name for both)
         if self.controller.frames['NewExpSettings'].txt_name_initial.get() != "" and \
