@@ -1527,67 +1527,51 @@ class StartAnalysis(tk.Frame):
         # change directory
         os.chdir(alignment_target_path)
 
-        # loop through file list for current condition (Library, Initial, Final conditions)
-        for i in file_list:
+        # process for library read file
+        #input_file = os.path.join(trimmed_read_path, condition_name + global_vars.FILE_FLAGS['Trimmed read file'])
+        input_file = os.path.join(global_vars.EXPERIMENT_SETTINGS['Experiment directory'], global_vars.FILE_FLAGS['Trimmed dir'], "Library" + global_vars.FILE_FLAGS['Trimmed read file'])
+        output_file = "Library" + global_vars.FILE_FLAGS['Aligned bam file']
+  
+        # get index full path + index name
+        index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + global_vars.FILE_FLAGS['Bowtie2 index name']
 
-            # check if current specified condition is the Library condition - special treatment if true
-            if condition_name == "Library":
-                # process for library read file
-                input_file = os.path.join(trimmed_read_path, condition_name + global_vars.FILE_FLAGS['Trimmed read file'])
-                output_file = condition_name + global_vars.FILE_FLAGS['Aligned bam file']
-            else:
-                # process for initial and final sample read files
-                # get replicate name
-                next_char = self.controller.get_rep_char(file_list.index(i))
-                input_file = os.path.join(trimmed_read_path, condition_name + cas9_type + next_char + global_vars.FILE_FLAGS['Trimmed read file'])
-                output_file = condition_name + cas9_type + next_char + global_vars.FILE_FLAGS['Aligned bam file']
+        # check if each index file is accessible; six files in total
+        # result_index = check_file_access([index+".1.bt2", index+".1.bt2")
 
-            # get index full path + index name
-            index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + \
-                         global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + \
-                         global_vars.FILE_FLAGS['Bowtie2 index name']
+        # check if trimmed read file is accessible
+        result_input = check_file_access(input_file)
 
-            # check if each index file is accessible; six files in total
-            # result_index = check_file_access([index+".1.bt2", index+".1.bt2")
+        if result_input is True:
 
-            # check if trimmed read file is accessible
-            result_input = check_file_access(input_file)
+            write_to_log("Getting alignment data for file: %s" % input_file)
 
-            if result_input is True:
+            # build command pieces
+            cmd_prefix = "bowtie2 -x \'%s\'" % index
+            cmd_f_in = " -U \'%s\'" % input_file
+            cmd_suffix = " --norc -N 1 -p %i | samtools view -bS - > \'%s\'" % (4 * int(global_vars.EXPERIMENT_SETTINGS['CPU cores']), output_file)
+            cmd = cmd_prefix + cmd_f_in + cmd_suffix
 
-                write_to_log("Getting alignment data for file: %s" % input_file)
+            # run command
+            cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
+            show_in_console = global_vars.show_in_console
 
-                # build command pieces
-                cmd_prefix = "bowtie2 -x \'%s\'" % index
-                cmd_f_in = " -U \'%s\'" % input_file
-                cmd_suffix = " --norc -N 1 -p %i | samtools view -bS - > \'%s\'" % (4 * int(global_vars.EXPERIMENT_SETTINGS['CPU cores']), output_file)
-                cmd = cmd_prefix + cmd_f_in + cmd_suffix
-
-                # run command
-                cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-                show_in_console = global_vars.show_in_console
-
-                # output
-                while True:
-                    out = cmd_output.stderr.read(1)
-                    if out == b'' and cmd_output.poll() != None:
-                        break
-                    if out != '':
-                        output = out.decode('utf-8')
-                        if show_in_console:
-                            sys.stdout.write(output)
-                            sys.stdout.flush()
-
-                # check if we are doing the steps for the Library read file,
-                # if true, then break the for loop from continuing because it only has one replicate; no looping required
-                if condition_name == "Library":
-                    write_to_log("Successfully aligned initial library reads!")
+            # output
+            while True:
+                out = cmd_output.stderr.read(1)
+                if out == b'' and cmd_output.poll() != None:
                     break
-                else:
-                    write_to_log("Successfully aligned file: %s!" % input_file)
-            else:
-                write_to_log("Error opening trimmed read file: %s!" % input_file)
-                return False
+                if out != '':
+                    output = out.decode('utf-8')
+                    if show_in_console:
+                        sys.stdout.write(output)
+                        sys.stdout.flush()
+
+            write_to_log("Successfully aligned initial library reads!")
+
+        else:
+            write_to_log("Error opening trimmed read file: %s!" % input_file)
+            return False
+
         return True
 
     # function to run mageck's count function to get read counts from alignments for all samples
