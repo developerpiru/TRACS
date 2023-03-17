@@ -1369,7 +1369,14 @@ class StartAnalysis(tk.Frame):
 
                 # build command pieces
                 cmd_prefix = "head \'%s\' -n %s| " % (readfile, line_count[0])
-                cmd_main = "cutadapt -g NAAGGACGAAACANNN...GTTTTAGAGCTAGAAAT -> "
+                #cmd_main = "cutadapt -g NAAGGACGAAACANNN...GTTTTAGAGCTAGAAAT -> "
+                # imrpoved adapter capture
+                cmd_main = "cutadapt -g TTGTGNAAAGGACGAAACACCG...GTTTTAGAGCTAGAAA -> "
+
+                #TTGTGNAAAGGACGAAACACCG CACCACCCTTCAGAAGAGCC GTTTTAGAGCTAGAAATAGCAAGT
+                #TTGTGNAAAGGACGAAACACCG CTCCAGTTAGCGCCTTTCAC GTTTTAGAGCTAGAAAAAGCAAG
+                #TTGTGNAAAGGACGAAACACCG TGAGATACACCTTCTTCTCG GTTTTAGAGCTAGAAATAGCAAGT
+
                 cmd_f_out = "\'" + this_filename + "\' "
                 cmd_args = "-e 0.1 --cores %i --trimmed-only" % global_vars.EXPERIMENT_SETTINGS['CPU cores']
 
