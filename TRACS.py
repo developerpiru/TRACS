@@ -1481,10 +1481,8 @@ class StartAnalysis(tk.Frame):
             # build command pieces
             # structure: bowtie2-build LibraryAB_fasta.fa bowtie2_index_LibraryAB
             cmd_prefix = "bowtie2-build "
-            cmd_f_in = "\'../" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + \
-                       global_vars.FILE_FLAGS['Fasta library file'] + "\' "
-            cmd_f_out = "\'" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + \
-                        global_vars.FILE_FLAGS['Bowtie2 index name'] + "\'"
+            cmd_f_in = "\'../" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + global_vars.FILE_FLAGS['Fasta library file'] + "\' "
+            cmd_f_out = "\'" + global_vars.FILE_FLAGS['Bowtie2 index name'] + "\'"
             cmd = cmd_prefix + cmd_f_in + cmd_f_out
 
             # run command
@@ -1528,12 +1526,11 @@ class StartAnalysis(tk.Frame):
         os.chdir(alignment_target_path)
 
         # process for library read file
-        #input_file = os.path.join(trimmed_read_path, condition_name + global_vars.FILE_FLAGS['Trimmed read file'])
         input_file = os.path.join(global_vars.EXPERIMENT_SETTINGS['Experiment directory'], global_vars.FILE_FLAGS['Trimmed dir'], "Library" + global_vars.FILE_FLAGS['Trimmed read file'])
         output_file = "Library" + global_vars.FILE_FLAGS['Aligned bam file']
   
         # get index full path + index name
-        index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + global_vars.FILE_FLAGS['Bowtie2 index name']
+        index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + global_vars.FILE_FLAGS['Bowtie2 index name']
 
         # check if each index file is accessible; six files in total
         # result_index = check_file_access([index+".1.bt2", index+".1.bt2")
@@ -1602,9 +1599,11 @@ class StartAnalysis(tk.Frame):
         cmd_input_file_list = ""
 
         # prepare library read file first 
-        # input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Aligned bam file'])
+        input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Aligned bam file'])
+        
         # use trimmed fastq file for Library reads, not bam file
-        input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Trimmed read file'])
+        #input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Trimmed read file'])
+        
         # add Library name to sample list
         cmd_sample_list = cmd_sample_list + "Library" + ","
         # add trimmed bam-aligned Library read file to input file list
