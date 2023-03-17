@@ -1,4 +1,4 @@
-# version 1.1.19 2023
+# version 1.1.19 alpha 2023
 
 
 import tkinter as tk
@@ -19,7 +19,7 @@ import _thread
 import global_vars_v1 as global_vars
 
 # version
-app_version = "1.1.9"
+app_version = "1.1.9-alpha"
 
 # TRACS: Toolset for the Ranked Analysis of CRISPR Screens
 # Created by Pirunthan Perampalam
@@ -1601,8 +1601,10 @@ class StartAnalysis(tk.Frame):
         cmd_sample_list = ""
         cmd_input_file_list = ""
 
-        # prepare library read file first
-        input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Aligned bam file'])
+        # prepare library read file first 
+        # input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Aligned bam file'])
+        # use trimmed fastq file for Library reads, not bam file
+        input_file = os.path.join(aligned_read_path, "Library" + global_vars.FILE_FLAGS['Trimmed read file'])
         # add Library name to sample list
         cmd_sample_list = cmd_sample_list + "Library" + ","
         # add trimmed bam-aligned Library read file to input file list
@@ -1655,7 +1657,7 @@ class StartAnalysis(tk.Frame):
             cmd_prefix = "mageck count -l \'" + global_vars.EXPERIMENT_SETTINGS['Library reference file'] + "\'"
             cmd_namtag = " -n \'" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "\'"
             cmd_sampletags = " --sample-label \'" + cmd_sample_list[:-1] + "\'"
-            cmd_readfiles = " --fastq " + cmd_input_file_list
+            cmd_readfiles = " --fastq " + cmd_input_file_list + " --trim-5 0"
             cmd = cmd_prefix + cmd_namtag + cmd_sampletags + cmd_readfiles
 
             # run command
