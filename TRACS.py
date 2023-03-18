@@ -1542,7 +1542,7 @@ class StartAnalysis(tk.Frame):
         output_file = "Library" + global_vars.FILE_FLAGS['Aligned bam file']
   
         # get index full path + index name
-        index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + global_vars.FILE_FLAGS['Bowtie2 index name']
+        index = global_vars.FILE_FLAGS['Bowtie2 index full path'] + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + global_vars.FILE_FLAGS['Bowtie2 index name']
 
         # check if each index file is accessible; six files in total
         # result_index = check_file_access([index+".1.bt2", index+".1.bt2")
