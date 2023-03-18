@@ -19,7 +19,7 @@ import _thread
 import global_vars_v1 as global_vars
 
 # version
-app_version = "1.1.9-alpha-3"
+app_version = "1.1.19-alpha-4"
 
 # TRACS: Toolset for the Ranked Analysis of CRISPR Screens
 # Created by Pirunthan Perampalam

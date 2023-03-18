@@ -61,5 +61,5 @@ def init_vars():
     }
 
     global show_in_console, status_label, progress_bar, total_steps, current_step, btnStart, btnVisualize
-    show_in_console = False                             # flag to turn on/off some messages in console/terminal window
+    show_in_console = True                             # flag to turn on/off some messages in console/terminal window
     current_step = 0                                    # stores the current step in analysis
