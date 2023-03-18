@@ -1488,10 +1488,11 @@ class StartAnalysis(tk.Frame):
 
             # build command pieces
             # structure: bowtie2-build LibraryAB_fasta.fa bowtie2_index_LibraryAB
-            cmd_prefix = "awk -F \',\' \'{print \">\"$1\"\\n\"$2}\' "
-            cmd_f_in = "\'" + global_vars.EXPERIMENT_SETTINGS['Library reference file'] + "\'"
-            cmd_f_out = " > \'" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + \
-                        global_vars.FILE_FLAGS['Fasta library file'] + "\'"
+            cmd_prefix = "bowtie2-build "
+            cmd_f_in = "\'../" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + \
+                       global_vars.FILE_FLAGS['Fasta library file'] + "\' "
+            cmd_f_out = "\'" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + "-" + \
+                        global_vars.FILE_FLAGS['Bowtie2 index name'] + "\'"
             cmd = cmd_prefix + cmd_f_in + cmd_f_out
 
             write_to_log(cmd)
