@@ -1325,7 +1325,7 @@ class StartAnalysis(tk.Frame):
         write_to_log("All done!")
 
         # enable visualize button
-        global_vars.btnVisualize.config(state="normal")
+        #global_vars.btnVisualize.config(state="normal")
 
     # function to call cutadapt to trim provided read sample files
     def do_trimming_v2(self, file_list, condition_name, cas9_type):
