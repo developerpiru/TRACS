@@ -19,7 +19,7 @@ import _thread
 import global_vars_v1 as global_vars
 
 # version
-app_version = "1.1.9-alpha"
+app_version = "1.1.9-alpha-2"
 
 # TRACS: Toolset for the Ranked Analysis of CRISPR Screens
 # Created by Pirunthan Perampalam
@@ -1383,6 +1383,7 @@ class StartAnalysis(tk.Frame):
                 cmd = cmd_prefix + cmd_main + cmd_f_out + cmd_args
 
                 write_to_log("Trimming file %s and saving as %s" % (readfile, this_filename))
+                write_to_log(cmd)
 
                 # run command in shell
                 cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
@@ -1432,10 +1433,11 @@ class StartAnalysis(tk.Frame):
             cmd = cmd_prefix + cmd_f_in + cmd_f_out
 
             write_to_log("Converting reference sgRNA library file from CSV to FASTA...")
+            write_to_log(cmd)
 
             # run command
             cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-            show_in_console = global_vars.show_in_console
+            show_in_console = global_vars.show_in_console          
 
             # output
             while True:
@@ -1486,10 +1488,13 @@ class StartAnalysis(tk.Frame):
 
             # build command pieces
             # structure: bowtie2-build LibraryAB_fasta.fa bowtie2_index_LibraryAB
-            cmd_prefix = "bowtie2-build "
-            cmd_f_in = "\'../" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + global_vars.FILE_FLAGS['Fasta library file'] + "\' "
-            cmd_f_out = "\'" + global_vars.FILE_FLAGS['Bowtie2 index name'] + "\'"
+            cmd_prefix = "awk -F \',\' \'{print \">\"$1\"\\n\"$2}\' "
+            cmd_f_in = "\'" + global_vars.EXPERIMENT_SETTINGS['Library reference file'] + "\'"
+            cmd_f_out = " > \'" + global_vars.EXPERIMENT_SETTINGS['Experiment name'] + \
+                        global_vars.FILE_FLAGS['Fasta library file'] + "\'"
             cmd = cmd_prefix + cmd_f_in + cmd_f_out
+
+            write_to_log(cmd)
 
             # run command
             cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
@@ -1553,6 +1558,8 @@ class StartAnalysis(tk.Frame):
             cmd_f_in = " -U \'%s\'" % input_file
             cmd_suffix = " --norc -N 1 -p %i | samtools view -bS - > \'%s\'" % (4 * int(global_vars.EXPERIMENT_SETTINGS['CPU cores']), output_file)
             cmd = cmd_prefix + cmd_f_in + cmd_suffix
+
+            write_to_log(cmd)
 
             # run command
             cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
@@ -1664,6 +1671,8 @@ class StartAnalysis(tk.Frame):
             cmd_sampletags = " --sample-label \'" + cmd_sample_list[:-1] + "\'"
             cmd_readfiles = " --fastq " + cmd_input_file_list + " --trim-5 0"
             cmd = cmd_prefix + cmd_namtag + cmd_sampletags + cmd_readfiles
+
+            write_to_log(cmd)
 
             # run command
             cmd_output = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
